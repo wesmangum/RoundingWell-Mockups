@@ -1,0 +1,22 @@
+//
+// Text alignment
+// -----------------------------------------------------------
+.u-text-align {
+    &--center { text-align: center !important; }
+    &--left { text-align: left !important; }
+    &--right { text-align: right !important; }
+}
+
+.u-text-all-caps {
+    text-transform: uppercase !important;
+}
+
+.u-text-overflow {
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+}
+
+.u-text-nowrap {
+    white-space: nowrap;
+}

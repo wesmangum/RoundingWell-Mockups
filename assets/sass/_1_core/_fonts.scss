@@ -1,0 +1,26 @@
+// *************************************
+//
+//   Font face import
+//
+// *************************************
+$font-path: '../fonts';
+
+@font-face {
+    font-family: 'ProximaNovaSoft';
+    font-style: normal;
+    font-weight: normal;
+    src: url('#{$font-path}/ProximaNovaSoft/2924BB_2_0.eot');
+    src: url('#{$font-path}/ProximaNovaSoft/2924BB_2_0.eot?#iefix') format('embedded-opentype'),
+    url('#{$font-path}/ProximaNovaSoft/2924BB_2_0.woff') format('woff'),
+    url('#{$font-path}/ProximaNovaSoft/2924BB_2_0.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'ProximaNovaSoft';
+    font-style: normal;
+    font-weight: bold;
+    src: url('#{$font-path}/ProximaNovaSoft/2924BB_1_0.eot');
+    src: url('#{$font-path}/ProximaNovaSoft/2924BB_1_0.eot?#iefix') format('embedded-opentype'),
+    url('#{$font-path}/ProximaNovaSoft/2924BB_1_0.woff') format('woff'),
+    url('#{$font-path}/ProximaNovaSoft/2924BB_1_0.ttf') format('truetype');
+}

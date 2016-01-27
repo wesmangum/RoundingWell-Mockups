@@ -1,0 +1,11 @@
+//
+// Alignment/Positioning
+// -----------------------------------------------------------
+
+.u-float {
+
+    &--left  { float: left; }
+    &--right { float: right; }
+    &--clear { clear: both; }
+
+}

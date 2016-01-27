@@ -1,0 +1,14 @@
+{
+  "vendor" : {
+    "scripts" : [
+      "assets/js/vendor/underscore.js",
+      "assets/js/vendor/*.js"
+    ]
+  },
+  "scripts" : [
+    "assets/js/rwprovider/**/*.js"
+  ],
+  "styles" : [
+    "assets/sass/**/*.scss"
+  ]
+}

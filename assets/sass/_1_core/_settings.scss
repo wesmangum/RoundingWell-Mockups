@@ -1,0 +1,168 @@
+// *************************************
+//
+//   Typography
+//
+// *************************************
+
+// Base font size is used in media query and rem calculations
+$base-font-size: 16;
+
+
+// -------------------------------------
+//   Font Families
+// -------------------------------------
+
+// proxima soft is currently available in 400,600,700 weights
+$proxima-soft: 'ProximaNovaSoft', 'Droid Sans', 'helvetica neue', 'arial', sans-serif;
+
+
+
+// -------------------------------------
+//   Font Roles
+// -------------------------------------
+
+$base-font-family: $proxima-soft;
+$icon-font: 'roundingwell';
+
+
+
+// -------------------------------------
+//   Font Weights
+// -------------------------------------
+
+$regular-font-weight: 400;
+$semibold-font-weight: 600;
+$bold-font-weight: 700;
+
+
+
+
+
+// *************************************
+//
+//   Dimensions
+//
+// *************************************
+
+// -------------------------------------
+//   Margin & Padding
+// -------------------------------------
+
+$pad-smaller: 5px;
+$pad-small: 10px;
+$pad: 15px;
+$pad-med: 25px;
+$pad-large: 40px;
+
+$vertical-rhythm: $base-font-size / 2;  // should equal a whole number
+
+
+
+// -------------------------------------
+//   Breakpoints
+// -------------------------------------
+
+$bp-smaller: 320/16 * 1em;
+$bp-small: 568/16 * 1em;
+$bp-medium: 640/16 * 1em;
+$bp-large: 1200/16 * 1em;
+
+$bp-height-medium: 600/16 * 1em;
+
+// $maxwidth: 1440/16 * 1em;
+
+// *************************************
+//
+//   Colors
+//
+// *************************************
+
+// -------------------------------------
+//   Main Colors
+// -------------------------------------
+
+$colors: (
+
+    blue: (
+        base: #0582DA,
+        light: #058EF2,
+        dark: #0270BF,
+        border: #0270BF
+    ),
+    green: (
+        base: #00BF68,
+        light: #00D976,
+        dark: #00A65B,
+        border: #00A65B
+    ),
+    red: (
+        base: #E65140,
+        light: #FF5A47,
+        dark: #CC4839,
+        border: #CC4839
+    ),
+    yellow: (
+        base: #FFBE00,
+        light: #FFC618,
+        dark: #FFC618,
+        border: #FFC618
+    ),
+    navy: (
+        base: #35444D
+    ),
+
+
+    deep_slate: (
+        base:  #1F2C33,
+        light: #2E424C,
+        dark:  #10161A
+    ),
+    sky_blue: (
+        base:   #CBD9E3,
+        border: #CBD9E3
+    ),
+
+
+    light_blue: (
+        base: #F2F9FD,
+        dark: #C2E1F6,
+        light_border: #C2E1F6,
+        dark_border:  #0582DA
+    ),
+    light_green: (
+        base: #E5F8F0,
+        dark: #99E5C3,
+        light_border: #BFEFD9,
+        dark_border:  #00BF68
+    )
+
+);
+
+
+
+// -------------------------------------
+//   Black, White & Neutral Colors
+// -------------------------------------
+
+$white: #FFF;
+$black: #000;
+
+$black-20: #333;
+$black-40: #666;
+$black-60: #999;
+$black-80: #CCC;
+$black-90: #E6E6E6;
+$black-95: #F2F2F2;
+$black-98: #FAFAFA;
+
+
+
+// -------------------------------------
+//   Color Roles
+// -------------------------------------
+
+$error-color: color(red);
+$info-color: color(blue);
+$success-color: color(green);
+$warning-color: color(yellow);
+$highlighted: #FFF8E5;

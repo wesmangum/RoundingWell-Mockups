@@ -1,0 +1,21 @@
+{
+  "author": "RoundingWell Mockups",
+  "name": "mainapp_gulp",
+  "version": "0.2.0",
+  "devDependencies": {
+    "eslint-plugin-rwell-camelcase": "^1.1.0",
+    "gulp": "^3.8.8",
+    "gulp-autoprefixer": "^1.0.0",
+    "gulp-concat": "^2.4.0",
+    "gulp-declare": "^0.3.0",
+    "gulp-eslint": "^1.1.1",
+    "gulp-notify": "^1.6.0",
+    "gulp-plumber": "^0.6.6",
+    "gulp-sass": "^2.1.1",
+    "gulp-sass-lint": "^1.1.0",
+    "gulp-sourcemaps": "^1.2.8",
+    "gulp-watch": "^0.6.5",
+    "gulp-wrap": "^0.3.0",
+    "require-dir": "^0.1.0"
+  }
+}

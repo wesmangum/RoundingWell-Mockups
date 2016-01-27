@@ -1,0 +1,144 @@
+//
+// Typography
+// -----------------------------------------------------------
+
+// sets up fonts to be base-10, for using rem units
+// hard set to 10px to fix chrome bug
+html { font-size: 10px !important; }
+
+body {
+    color: $black-20;
+    font-family: $proxima-soft;
+    font-size: 14px;
+}
+
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 { font-weight: $bold-font-weight; }
+
+// Typography mixin
+// defaults are set by styles on the body
+// font-size: 14, color: $black-20
+@mixin proxima-nova($color: false, $font-size: false, $font-weight: false, $text-transform: false) {
+    @if $color {
+        color: $color;
+    }
+
+    @if $font-size {
+        font-size: $font-size;
+    }
+
+    @if $font-weight {
+        font-weight: $font-weight;
+    }
+
+    @if $text-transform {
+        text-transform: $text-transform;
+    }
+}
+
+.pn-12 {
+    font-size: 12px;
+}
+
+.pn-12--blue--bold {
+    @include proxima-nova(color(blue), 12px, $bold-font-weight);
+}
+
+.pn-12--black_40 {
+    @include proxima-nova($black-40, 12px);
+}
+
+.pn-12--black_60 {
+    @include proxima-nova($black-60, 12px);
+}
+
+.pn-12--black_80 {
+    @include proxima-nova($black-80, 12px);
+}
+
+.pn-12--black-40--semibold--all-caps {
+    @include proxima-nova($black-40, 12px, $semibold-font-weight, uppercase);
+}
+
+.pn-12--black-60--semibold {
+    @include proxima-nova($black-60, 12px, $semibold-font-weight);
+}
+
+.pn-12--black-60--all-caps {
+    @include proxima-nova($black-60, 12px, false, uppercase);
+}
+
+.pn-12--black-60--semibold--all-caps {
+    @include proxima-nova($black-60, 12px, $semibold-font-weight, uppercase);
+}
+
+// Font Size 13
+.pn-13--grey {
+    color: #B4B4B4 !important;
+    font-size: 13px;
+}
+
+.pn-13--black-60 {
+    @include proxima-nova($black-60, 13px);
+}
+
+// Font Size 14
+.pn-14--bold {
+    font-size: 14px;
+    font-weight: $bold-font-weight;
+}
+
+.pn-14--black-20 {
+    @include proxima-nova($black-20, 14px);
+}
+
+.pn-14--black-40 {
+    @include proxima-nova($black-40, 14px);
+}
+
+.pn-14--black--bold {
+    @include proxima-nova($black, 14px, $bold-font-weight);
+}
+
+.pn-14-black-20--semibold--all-caps {
+    @include proxima-nova($black-20, 14px, $semibold-font-weight);
+}
+
+// Font Size 16
+.pn-16--black--semibold {
+    @include proxima-nova($black, 16px, $semibold-font-weight);
+}
+
+.pn-16--blue--bold {
+    @include proxima-nova(color(blue), 16px, $bold-font-weight);
+}
+
+.pn--blue {
+    color: color(blue);
+}
+
+.pn--blue--bold {
+    @include proxima-nova(color(blue), false, $bold-font-weight);
+}
+
+.pn--black-60 {
+    color: $black-60;
+}
+
+.pn--black-40 {
+    color: $black-40;
+}
+
+.pn--black-20 {
+    color: $black-20;
+}
+
+.u-nowrap {
+    white-space: nowrap;
+}
