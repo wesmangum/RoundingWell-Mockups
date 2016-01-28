@@ -13,11 +13,11 @@ module.exports = {
         }
     },
     scripts:{
-        build: 'assets/js/_build/',
+        build: 'public/assets/js/',
         // watch: watches the manifest.json scripts
     },
     styles:{
-        build: 'assets/css/',
+        build: 'public/assets/css/',
         watch: 'assets/sass/**/*.scss'
     }
 };

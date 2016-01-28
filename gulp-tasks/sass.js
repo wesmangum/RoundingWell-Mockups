@@ -5,7 +5,8 @@ var gulp = require('gulp'),
     errors  = require('./config/').errors,
     notify  = require('gulp-notify'),
     sass    = require('gulp-sass'),
-    plumber = require('gulp-plumber');
+    plumber = require('gulp-plumber'),
+    livereload = require('gulp-livereload');
 
 gulp.task('styles', function () {
     return gulp.src(manifest.styles)
@@ -16,5 +17,6 @@ gulp.task('styles', function () {
             browsers: ['last 2 versions', 'Explorer >= 8'],
             cascade: false
         }))
-        .pipe(gulp.dest(build));
+        .pipe(gulp.dest(build))
+        .pipe(livereload());
 });

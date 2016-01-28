@@ -1,8 +1,12 @@
 var gulp   = require('gulp'),
     manifest = require('../assets/config/manifest.json'),
-    config = require('./config/');
+    config = require('./config/'),
+    livereload = require('gulp-livereload');
 
 gulp.task('watch', ['scripts', 'styles'], function() {
+	// listents for any changes
+	livereload.listen();
+
     // Watches sass for changes
     gulp.watch(config.styles.watch, ['styles:lint', 'styles']);
 

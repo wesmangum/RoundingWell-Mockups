@@ -5,7 +5,8 @@ var gulp    = require('gulp'),
     concat  = require('gulp-concat'),
     notify  = require('gulp-notify'),
     sourcemaps = require('gulp-sourcemaps'),
-    plumber = require('gulp-plumber');
+    plumber = require('gulp-plumber'),
+    livereload = require('gulp-livereload');
 
 function concatMap(src, filename){
     return gulp.src(src)
@@ -15,7 +16,8 @@ function concatMap(src, filename){
         //.pipe(sourcemaps.write('./', {
         //    sourceMappingURLPrefix: '/assets/js/_build/'
         //}))
-        .pipe(gulp.dest(build));
+        .pipe(gulp.dest(build))
+        .pipe(livereload());
 }
 
 gulp.task('scripts:concat:core', function(){
