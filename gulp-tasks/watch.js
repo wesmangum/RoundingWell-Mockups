@@ -13,4 +13,7 @@ gulp.task('watch', ['scripts', 'styles'], function() {
     // Watches JS files for changes
     gulp.watch(manifest.vendor.scripts, ['scripts:concat:vendor']);
     gulp.watch(manifest.scripts, ['scripts:lint', 'scripts:concat:core']);
+
+    // Watch templates for changes
+    gulp.watch(manifest.templates, ['templates']);
 });

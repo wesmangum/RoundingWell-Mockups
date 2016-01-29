@@ -10,5 +10,8 @@
   ],
   "styles" : [
     "assets/sass/**/*.scss"
+  ],
+  "templates": [
+    "public/**/*.html"
   ]
 }

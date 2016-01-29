@@ -28,7 +28,8 @@ gulp.task('scripts:lint', function() {
 });
 
 gulp.task('styles:lint', function() {
-    return lintsass(['./assets/sass/**/*.s+(a|c)ss', '!./assets/sass/_1_core/_reset.scss']);
+    return lintsass(['./assets/sass/**/*.s+(a|c)ss', '!./assets/sass/_1_core/_reset.scss',
+      '!./assets/sass/_0_libs/**/*']);
 });
 
 gulp.task('lint', ['scripts:lint', 'styles:lint']);
