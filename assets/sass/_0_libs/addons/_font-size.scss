@@ -1,0 +1,7 @@
+// Convert font sizes to rems
+// base font is 16
+
+@mixin font-size($font-size) {
+    font-size: $font-size + 0px;
+    font-size: ($font-size / $base-font-size) + 0rem;
+}

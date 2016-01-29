@@ -1,0 +1,423 @@
+%button {
+    border-radius: 4px;
+    border-style: solid;
+    border-width: 1px;
+    color: #FFF;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 8px 15px;
+    text-decoration: none;
+    transition: all 0.15s linear;
+
+
+    &:focus,
+    &:active,
+    &.selected,
+    &.is-pressed {
+        box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.25);
+    }
+
+    &.disabled,
+    &[disabled],
+    &[disabled= 'disabled'] {
+        -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=50)';
+        cursor: not-allowed;
+        opacity: 0.5;
+    }
+
+    // Size variants
+    &.small {
+        padding: 5px 10px;
+    }
+
+    &.medium {
+        padding: 7px 20px;
+    }
+
+    &.large {
+        font-size: 16px;
+        padding: 8px 20px;
+    }
+
+    &.x-large {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+
+    &.block {
+        display: block;
+        width: 100%;
+    }
+
+    // add an icon to the left
+    &.w-icon {
+        padding-left: 30px;
+        position: relative;
+        text-align: left;
+    }
+
+    .w-icon__icon {
+        left: 10px;
+        position: absolute;
+        top: 5px;
+    }
+}
+
+
+
+.button--blue {
+    @extend %button;
+
+    background-color: color(blue);
+    border-color: color(blue, border);
+
+    &:hover,
+    &:focus {
+        background-color: color(blue, light);
+    }
+
+    &:active {
+        background-color: color(blue, dark);
+        box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.25);
+    }
+
+    &.disabled,
+    &[disabled] {
+        &:hover {
+            background-color: color(blue);
+        }
+    }
+
+    &.tab-focus {
+        &:focus {
+            box-shadow: 0 0 0 2px $white, 0 0 0 3px color(blue);
+        }
+    }
+}
+
+.button--red {
+    @extend %button;
+    background-color: color(red);
+    border-color: color(red, border);
+
+    &:hover,
+    &:focus {
+        background-color: color(red, light);
+    }
+
+    &:active {
+        background-color: color(red, dark);
+        box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.25);
+    }
+
+    &.disabled,
+    &[disabled] {
+        &:hover {
+            background-color: color(red);
+        }
+    }
+}
+
+.button--green {
+    @extend %button;
+    background-color: color(green);
+    border-color: color(green, border);
+
+    &:hover,
+    &:focus {
+        background-color: color(green, light);
+    }
+
+    &:active {
+        background-color: color(green, dark);
+        box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.25);
+    }
+
+    &.disabled,
+    &[disabled] {
+        &:hover {
+            background-color: color(green);
+        }
+    }
+}
+
+.button--white {
+    @extend %button;
+    background-color: #FFF;
+    border-color: #D9D9D9;
+    color: color(blue);
+
+    &:hover {
+        background-color: color(blue);
+        border-color: color(blue, border);
+        color: #FFF;
+    }
+}
+
+.button--white--alt {
+    @extend %button;
+    background-color: #FAFBFD;
+    border-color: color(sky_blue, border);
+    color: #3D5766;
+
+    &:hover,
+    &:focus {
+        background-color: $white;
+        color: color(blue);
+    }
+
+    &:active,
+    &.selected {
+        background-color: #FAFBFC;
+    }
+}
+
+.button--grey {
+    @extend %button;
+    background-color: $black-98;
+    border-color: $black-80;
+    color: #3D5766;
+
+    &:hover {
+        background-color: $white;
+        color: color(blue);
+    }
+}
+
+.context-trail a[class*=button--] {
+    color: #FFF;
+}
+
+
+.button--light-green {
+    @extend %button;
+    background-color: color(light_green);
+    border-color: color(light_green, light_border);
+    color: color(green);
+
+    &:hover,
+    &:focus {
+        border-color: color(green);
+    }
+
+    &:active {
+        background-color: color(light_green, dark);
+    }
+}
+
+
+.button--light-blue {
+    @extend %button;
+    background-color: color(light_blue);
+    border-color: color(light_blue, light_border);
+    color: color(blue);
+    font-size: 13px;
+
+    &:hover {
+        border-color: color(blue);
+    }
+
+    &:active {
+        background-color: color(light_blue, dark);
+    }
+
+    &.disabled,
+    &[disabled] {
+        background-color: #FFF;
+        border-color: #E5E5E5;
+        color: #CCC;
+
+        &[class*=icon-]:before {
+            color: #CCC;
+        }
+    }
+
+    &.has-error {
+        border-color: $error-color;
+    }
+
+    &.icon-right-arrow-right {
+        position: relative;
+
+        &:before {
+            color: color(blue);
+            content: '\e625';
+            font-family: $icon-font;
+            font-size: 16px;
+            position: absolute;
+            right: 8px;
+            top: 7px;
+        }
+    }
+}
+
+
+.button--light-gradient,
+%button--light-gradient {
+    @extend %button;
+
+    background-color: #F2F2F2;
+    background-image: linear-gradient($white, $black-95);
+    border-color: $black-80;
+    border-radius: 2px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    color: $black-20;
+    padding: 8px 10px;
+
+    &:hover {
+        background-color: $white;
+        background-image: linear-gradient($white, $white);
+        color: $black;
+        cursor: pointer;
+    }
+
+    &:active,
+    &.selected,
+    .selected &,
+    .selected &.faux-select:focus,
+    .is-pressed & {
+        background: $black-98;
+        box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+    }
+
+    &.faux-select {
+        padding-right: 35px;
+        position: relative;
+        text-align: left;
+
+        // Reset box shadow, let .selected &, &.selected only handle the inset box-shadow
+        &:focus {
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        &.on,
+        &.selected,
+        &.is-pressed {
+            background: $black-98;
+            box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        &.small {
+            font-size: 14px;
+            padding-bottom: 5px;
+            padding-top: 5px;
+        }
+
+        &:after {
+            // .font-icon-arrow-down
+            color: #656565;
+            content: '\e032';
+            font-family: $icon-font;
+            height: 14px;
+            margin-top: -7px;
+            position: absolute;
+            right: 10px;
+            top: 50%;
+        }
+
+        &[disabled],
+        &.is-disabled {
+            background-image: linear-gradient($white, $black-95);
+            border-color: $black-80;
+            color: $black-20;
+            cursor: not-allowed;
+        }
+    }
+
+}
+
+
+.dropdown-button {
+    padding-right: 35px;
+    position: relative;
+
+    .font-icon-arrow-down {
+        height: 14px;
+        margin-top: -7px;
+        position: absolute;
+        right: 10px;
+        top: 50%;
+    }
+
+    &.has-error {
+        border-color: $error-color;
+    }
+}
+
+
+.button--blue-bold,
+%button--blue-bold {
+    color: color(blue);
+    font-size: 13px;
+    font-weight: $bold-font-weight;
+
+    &.small {
+        padding: 5px 10px;
+    }
+}
+
+// If used to trigger a dropdown
+.button--blue-bold--dropdown {
+    @extend %button--blue-bold;
+    cursor: pointer;
+    position: relative;
+
+    .font-icon-arrow-down {
+        font-size: 16px;
+        position: relative;
+        top: 2px;
+    }
+}
+
+.button--grey-border {
+    @include proxima-nova(color(blue), 13px, $bold-font-weight);
+
+    border: 1px solid $black-80;
+    border-radius: 4px;
+    padding: 6px 10px;
+
+    // FIXME: same style as %button
+    &:focus,
+    &:active,
+    &.selected {
+        box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.25);
+    }
+}
+
+// turns icon and text red when tapping button
+.remove__btn:active,
+.remove__btn:active ~ span {
+    color: color(red);
+}
+
+
+.button--w-left-icon {
+    padding-left: 25px;
+    position: relative;
+    text-align: left;
+}
+
+.button--w-left-icon__icon {
+    left: 4px;
+    position: absolute;
+}
+
+
+// Fallback colors for IE8 & 9
+html[data-useragent*= 'MSIE 8.0'],
+html[data-useragent*= 'MSIE 9.0'] {
+    .button--blue,
+    .button--red,
+    .button--green,
+    .button--light-blue,
+    .button--white-button,
+    .button--light-gradient {
+        &.disabled,
+        &[disabled] {
+            background-color: $black-80 !important;
+            border-color: $black-80 !important;
+        }
+    }
+}

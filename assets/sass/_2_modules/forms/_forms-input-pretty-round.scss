@@ -1,0 +1,100 @@
+.input-pretty-round {
+    label,
+    input[type= 'checkbox'] {
+        height: 16px;
+        width: 16px;
+    }
+
+    label {
+        display: block;
+        margin: 0;
+        position: relative;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    input[type= 'checkbox'] {
+        opacity: 0.01; // visible for tab
+        position: absolute;
+        z-index: 4;
+
+
+        // -------------------------------------
+        //   Outer Circle
+        // -------------------------------------
+        + label:before {
+            background-color: #FFF;
+            border: 1px solid $black-80;
+            border-radius: 50%;
+            content: '';
+            display: inline-block;
+            height: 16px;
+            overflow: hidden;
+            width: 16px;
+            z-index: 5;
+        }
+
+        // error states are handled by adding a class to the input
+        &.has-error + label:before {
+            border-color: $error-color;
+        }
+
+        // input states for the outer circle or checkbox
+        &:disabled + label:before {
+            background-color: #CCC;
+        }
+
+        &:checked + label:before {
+            background-color: $black-20;
+            border-color: $black-20;
+        }
+
+
+        // -------------------------------------
+        //   Checkmark
+        // -------------------------------------
+
+        &:checked + label:after,
+        &:hover + label:after {
+            // transparent is to hide this from touch devices. COOL! (T-T)b
+            color: transparent;
+            // .font-icon-checkmark
+            content: '\e00b';
+            font-family: $icon-font;
+            font-size: 16px;
+            font-weight: $regular-font-weight;
+            left: 0;
+            margin-top: -8px;
+            position: absolute;
+            top: 50%;
+            z-index: 6;
+        }
+
+        &:checked + label:after {
+            color: $white !important;
+        }
+
+        &:checked:disabled + label:after {
+            color: #AAA;
+        }
+
+        @include no-touch-hover {
+            &:hover + label:after {
+                color: $black-80;
+            }
+        }
+    }
+}
+
+.lte-ie8 .input-pretty-round {
+    input[type= 'checkbox'] {
+        display: inline-block;
+        position: static;
+
+        + label:before {
+            display: none;
+        }
+    }
+}

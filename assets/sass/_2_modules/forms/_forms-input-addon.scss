@@ -1,0 +1,28 @@
+.input-addon {
+    position: relative;
+}
+
+.input-addon__icon {
+    border-radius: 4px 0 0 4px;
+    color: $black-60;
+    left: 9px;
+    margin-top: -8px;
+    position: absolute;
+    top: 50%;
+}
+
+.input-addon__input {
+    padding-left: 34px;
+
+    &:focus + .input-addon__icon {
+        color: $black-20;
+    }
+}
+
+.input-addon_optional {
+    color: $black-60;
+    float: left;
+    left: 10px;
+    position: relative;
+    top: 22px;
+}

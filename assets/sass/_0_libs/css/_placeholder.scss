@@ -1,0 +1,29 @@
+// Example:
+//
+// input {
+//   border: 1px solid #ccc;
+
+//   @include placeholder {
+//     color: #999;
+//   }
+// }
+
+$placeholders: '-webkit-input-placeholder',
+               '-moz-placeholder',
+               '-ms-input-placeholder';
+
+@mixin placeholder {
+    @each $placeholder in $placeholders {
+        @if $placeholder == "-ms-input-placeholder" {
+            &:#{$placeholder} {
+                @content;
+            }
+        }
+        @else {
+            &::#{$placeholder} {
+                @content;
+                opacity: 1;
+            }
+        }
+    }
+}

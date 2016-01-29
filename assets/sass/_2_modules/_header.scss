@@ -1,0 +1,66 @@
+.header {
+    padding: 20px;
+    position: relative;
+    text-align: center;
+
+    .search {
+        display: inline-block;
+        position: relative;
+        width: 200px;
+
+        input {
+            background: transparent;
+            border: 1px solid $black-80;
+            border-radius: 5px;
+            padding: 7px 10px;
+            width: 100%;
+        }
+
+        i {
+            color: $black-80;
+            position: absolute;
+            right: 8px;
+            top: 8px;
+            z-index: -1;
+        }
+    }
+
+    .left {
+        left: 20px;
+        margin-top: 5px;
+        position: absolute;
+    }
+
+    .right {
+        margin-top: 5px;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+    }
+
+    .menu {
+        cursor: pointer;
+        left: 0;
+        position: absolute;
+    }
+
+    h1 {
+        cursor: pointer;
+        margin-left: 25px;
+    }
+
+    .name {
+        cursor: pointer;
+        font-weight: $semibold-font-weight;
+
+        &.has-notifications:after {
+            background: color(red);
+            border-radius: 5px;
+            content: ' ';
+            display: inline-block;
+            padding: 3px;
+            position: absolute;
+            top: -2px;
+        }
+    }
+}

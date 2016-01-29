@@ -1,0 +1,61 @@
+.set-btn {
+    @include proxima-nova(color(blue), 12px, $bold-font-weight);
+
+    background: #FFF;
+    border: 1px solid color(light_blue, light_border);
+    border-radius: 2px;
+    cursor: pointer;
+    padding: 7px 7px 7px 30px;
+    position: relative;
+    text-align: left;
+    text-transform: uppercase;
+
+    &:focus { border-color: #91C4EF; }
+
+    &.has-error { border-color: $error-color; }
+
+    &__icon {
+        color: color(blue);
+        font-size: 16px;
+        left: 7px;
+        position: absolute;
+        top: 6px;
+    }
+
+    &__display { float: left; }
+}
+
+
+.set-input {
+    position: relative;
+
+    &.has-error { border-color: $error-color; }
+
+    &__icon {
+        color: color(blue);
+        font-size: 16px;
+        left: 8px;
+        position: absolute;
+        top: 7px;
+        z-index: 5;
+    }
+}
+
+.set-input__input {
+    @include proxima-nova(color(blue), 12px, $bold-font-weight);
+    @include placeholder {
+        color: color(blue);
+    }
+
+    background: $white;
+    border-color: #91C4EF;
+    border-radius: 2px;
+    padding: 7px 7px 7px 30px;
+    text-transform: uppercase;
+    width: auto;
+    z-index: 1;
+
+    &:focus {
+        border-color: #91C4EF;
+    }
+}

@@ -1,0 +1,43 @@
+nav {
+    background: color(deep_slate);
+    color: $white;
+    padding: 30px 0;
+
+    .list {
+        padding-bottom: 20px;
+    }
+
+    h3 {
+        border-bottom: 1px solid $black-40;
+        line-height: 1.6;
+        margin-bottom: 5px;
+        margin-left: 15px;
+    }
+
+    ul {
+        color: $black-60;
+        list-style-type: none;
+        margin-left: 5px;
+    }
+
+    li {
+        padding: 5px 0;
+        padding-left: 10px;
+        position: relative;
+
+        i {
+            position: absolute;
+            right: 15px;
+            visibility: hidden;
+        }
+
+        &:hover {
+            background: $black-90;
+            color: $black-20;
+
+            i {
+                visibility: visible;
+            }
+        }
+    }
+}

@@ -1,0 +1,27 @@
+// inspired by http://alwaystwisted.com/post.php?s=2013-04-01-my-media-query-mixin
+//
+// Example
+// @include mq($bp-medium,false,max,width) {
+//     property: value;
+// }
+
+@mixin mq($points, $for-ie8: true, $directions: min, $dimensions: width) {
+    $query: '';
+    @for $i from 1 through length($points) {
+        $query: $query + ' and (#{nth($directions, $i)}-#{nth($dimensions, $i)}: #{nth($points, $i)})';
+    }
+
+    @if $for-ie8 == true {
+        .lte-ie8 & {
+            @content;
+        }
+        @media screen #{$query} {
+            @content;
+        }
+    }
+    @else {
+        @media screen #{$query} {
+            @content;
+        }
+    }
+}

@@ -1,0 +1,33 @@
+// Functions for pixel conversions
+// ------------------------------------------------------------
+
+$base-font-size: 16 !default;
+
+// Make px to rems using base-font-size
+// echo as: font-size: rel(#px);
+// if the base is another value, say 24px, write rel(12, 24)
+
+@function rel($target, $context: $base-font-size) {
+    @if strip-units($target) == 0 { @return 0 }
+    @else if not $relative-sizing { @return (round(strip-units($target))) * $absolute-sizing-unit }
+    @else { @return (strip-units($target) / strip-units($context)) * $relative-sizing-unit }
+}
+
+// Make px to % using context container
+// Example: font-size: percent(10);
+// if the base is another value, say 16px, write percent(10, 16)
+@function percent($target, $context) {
+    @if strip-units($target) == 0 { @return 0 }
+    @return (strip-units($target) / strip-units($context)) * 100%;
+}
+
+// Make px to ems using context container
+// Example: width: calc-em(600 , 16);
+@function calc-em($target-px, $context) {
+  @return ($target-px / $context) * 1em;
+}
+
+// to remove the unit from the numbers that are passed
+@function strip-units($number) {
+  @return $number / ($number * 0 + 1);
+}

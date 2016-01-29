@@ -1,0 +1,12 @@
+// inspired by http://alwaystwisted.com/post.php?s=2013-04-01-my-media-query-mixin
+//
+// Example
+// @include mq($bp-medium,false,max,width) {
+//     property: value;
+// }
+
+@mixin no-touch-hover() {
+    .no-touch & {
+        @content;
+    }
+}

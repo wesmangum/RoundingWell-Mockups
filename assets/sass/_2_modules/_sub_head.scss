@@ -1,0 +1,64 @@
+.sub-head {
+
+    .info-region {
+        background: $black-90;
+        border-bottom: 1px solid $black-80;
+        border-top: 1px solid $black-80;
+        padding: 20px;
+        position: relative;
+    }
+
+    .breadcrumbs {
+        display: inline-block;
+        font-weight: $bold-font-weight;
+    }
+
+    .filter-toggle,
+    .option-toggle {
+        color: color(blue, light);
+        cursor: pointer;
+        display: inline-block;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+    }
+
+    .filter-region {
+        background: $black-95;
+        border-bottom: 1px solid $black-80;
+        display: none;
+        padding: 10px 20px;
+        position: relative;
+    }
+
+    .option-region {
+        background: $white;
+        box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.5);
+        display: none;
+        padding: 15px;
+        position: absolute;
+        right: 10px;
+        z-index: 1;
+
+        ul {
+            list-style-type: none;
+        }
+
+        li {
+            margin-bottom: 7px;
+            color: color(blue, light);
+        }
+    }
+
+    .dropdown-button {
+        margin-right: 10px;
+    }
+
+    .input-pretty {
+        display: inline-block;
+    }
+
+    .show {
+        display: block;
+    }
+}

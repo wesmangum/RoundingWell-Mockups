@@ -1,0 +1,73 @@
+// Contenteditable divs masquerading as inputs
+.input-ce {
+    position: relative;
+
+    &__input,
+    &__placeholder {
+        background-color: transparent;
+        border: 1px solid $black-90;
+        border-radius: 3px;
+        font-size: 14px;
+        min-height: 32px;
+        padding: 7px;
+        width: 100%;
+
+        // FIXME:IE8 bug - padding with min-height & border-box
+        .lte-ie8 & {
+            min-height: 18px;
+        }
+    }
+
+    &__input {
+        margin-bottom: 10px;
+        position: relative;
+        resize: none;
+        z-index: 2;
+
+        &:focus {
+            border: 1px solid #91C4EF;
+            box-shadow: none;
+        }
+
+        &.is-active {
+            background-color: $white;
+        }
+    }
+
+    &__placeholder {
+        background-color: $white;
+        color: $black-80;
+        left: 0;
+        position: absolute;
+        top: 0;
+        white-space: nowrap;
+        z-index: 1;
+    }
+}
+
+// @ mentions
+.ce-tag {
+    &:before {
+        background-color: $white;
+        border-radius: 2px;
+        box-shadow: 0 0 0 1px color(light_blue, light_border);
+        color: color(blue);
+        content: attr(data-content);
+        display: inline-block;
+        font-style: normal;
+        line-height: 1.2;
+        padding: 0 6px;
+    }
+
+    &.pending-removal:before {
+        color: color(red);
+    }
+
+    .lte-ie8 &:before {
+        padding: 0;
+    }
+}
+
+.match-format {
+    font-weight: $bold-font-weight;
+}
