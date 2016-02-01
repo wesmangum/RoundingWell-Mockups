@@ -225,3 +225,12 @@ $font-icon-path: '../fonts/roundingwell';
 .font-icon-question:before {
     content: '\3f';
 }
+
+.font-icon-checkmark-empty {
+    border: 1px solid $black;
+    border-radius: 2px;
+    height: 16px;
+    left: 0;
+    position: absolute;
+    width: 16px;
+}

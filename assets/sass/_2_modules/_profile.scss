@@ -1,0 +1,174 @@
+.patient-profile {
+    .close {
+        color: $black-60;
+        cursor: pointer;
+        float: right;
+        transform: rotate(45deg);
+    }
+
+    h1 {
+        color: color(blue, light);
+        font-size: 24px;
+    }
+
+    span {
+        color: color(blue, light);
+        display: inline-block;
+        margin: 0 2px;
+    }
+
+    .overview {
+        margin-bottom: 20px;
+
+        .more i {
+            cursor: pointer;
+            display: inline-block;
+            transform: rotate(45deg);
+        }
+    }
+
+    .risk-status {
+        border-bottom: 1px solid $black-80;
+        border-top: 1px solid $black-80;
+        color: $black-40;
+        margin-bottom: 20px;
+        padding: 15px 0;
+
+        .open {
+            color: color(green);
+        }
+    }
+
+    .risk {
+        h3 {
+            color: $black-60;
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+
+        h2 {
+            font-size: 18px;
+        }
+    }
+
+    .risk-factor {
+        margin: 15px 0 20px;
+
+        i {
+            color: color(blue, light);
+            display: inline-block;
+        }
+
+        span {
+            color: $black;
+            text-transform: initial;
+        }
+    }
+
+    .task-management {
+        margin-bottom: 40px;
+
+        li {
+            border-top: 1px solid $black-80;
+            cursor: pointer;
+            padding: 10px 0 10px 25px;
+            position: relative;
+
+            &:last-of-type {
+                border-bottom: 1px solid $black-80;
+            }
+        }
+
+        li:hover {
+            background: color(light_blue);
+
+            span {
+                color: color(blue, light);
+            }
+        }
+
+        span {
+            color: $black-60;
+        }
+
+        .add-task {
+            color: color(blue, light);
+            font-weight: $semibold-font-weight;
+
+            .font-icon-checkmark-empty {
+                border: 2px solid color(blue, light);
+            }
+        }
+    }
+
+    .history {
+        max-width: 500px;
+
+        li,
+        .assignee,
+        .info {
+            color: $black-60;
+            font-size: 14px;
+        }
+
+        li {
+            margin: 5px 0;
+            padding-left: 30px;
+
+            i {
+                left: 25px;
+                position: absolute;
+            }
+        }
+
+        .recent {
+            color: $black;
+            font-size: 16px;
+            margin: 15px 0;
+        }
+
+        .mention {
+            color: color(blue, light);
+            display: inline;
+            font-weight: $bold-font-weight;
+        }
+
+        .info {
+            margin: 2px 0;
+        }
+
+        .font-icon-checkmark {
+            border: 1px solid $black-80;
+            border-radius: 2px;
+            color: color(green);
+        }
+
+        .add-comment {
+            border: 1px solid $black-80;
+            border-radius: 5px;
+            color: color(blue, light);
+            cursor: pointer;
+            font-weight: $semibold-font-weight;
+            max-width: 400px;
+            padding: 10px;
+
+            i {
+                margin-right: 10px;
+            }
+        }
+    }
+
+    .footer {
+        background: $black-90;
+        border-top: 1px solid $black-80;
+        bottom: 0;
+        left: 0;
+        padding: 15px;
+        position: absolute;
+        width: 100%;
+
+        .follower {
+            font-weight: $semibold-font-weight;
+        }
+    }
+}

@@ -14,14 +14,7 @@
 .slideout-panel {
     box-shadow: -3px 0 3px 0 rgba(0, 0, 0, 0.75);
     position: relative;
-    will-change: transform;
     z-index: 1;
-}
-
-.slideout-open,
-.slideout-open body,
-.slideout-open .slideout-panel {
-    overflow: hidden;
 }
 
 .slideout-open .slideout-menu {

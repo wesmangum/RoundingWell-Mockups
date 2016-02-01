@@ -344,6 +344,15 @@ textarea {
   content: '\3f';
 }
 
+.font-icon-checkmark-empty {
+  border: 1px solid #000;
+  border-radius: 2px;
+  height: 16px;
+  left: 0;
+  position: absolute;
+  width: 16px;
+}
+
 .u-float--left {
   float: left;
 }
@@ -372,14 +381,7 @@ textarea {
 .slideout-panel {
   box-shadow: -3px 0 3px 0 rgba(0, 0, 0, 0.75);
   position: relative;
-  will-change: transform;
   z-index: 1;
-}
-
-.slideout-open,
-.slideout-open body,
-.slideout-open .slideout-panel {
-  overflow: hidden;
 }
 
 .slideout-open .slideout-menu {
@@ -705,8 +707,15 @@ h6 {
 }
 
 .header {
-  padding: 20px;
-  position: relative;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+.header .main-head {
+  background: #FFF;
+  padding: 20px 0;
   text-align: center;
 }
 
@@ -771,6 +780,69 @@ h6 {
   top: -2px;
 }
 
+.header .sub-head .info-region {
+  background: #E6E6E6;
+  border-bottom: 1px solid #CCC;
+  border-top: 1px solid #CCC;
+  padding: 20px;
+  position: relative;
+}
+
+.header .sub-head .breadcrumbs {
+  display: inline-block;
+  font-weight: 700;
+}
+
+.header .sub-head .filter-toggle,
+.header .sub-head .option-toggle {
+  color: #058EF2;
+  cursor: pointer;
+  display: inline-block;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+.header .sub-head .filter-region {
+  background: #F2F2F2;
+  border-bottom: 1px solid #CCC;
+  display: none;
+  padding: 10px 20px;
+  position: relative;
+}
+
+.header .sub-head .option-region {
+  background: #FFF;
+  box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.5);
+  display: none;
+  padding: 15px;
+  position: absolute;
+  right: 10px;
+  z-index: 1;
+}
+
+.header .sub-head .option-region ul {
+  list-style-type: none;
+}
+
+.header .sub-head .option-region li {
+  color: #058EF2;
+  cursor: pointer;
+  margin-bottom: 7px;
+}
+
+.header .sub-head .dropdown-button {
+  margin-right: 10px;
+}
+
+.header .sub-head .input-pretty {
+  display: inline-block;
+}
+
+.header .sub-head .show {
+  display: block;
+}
+
 nav {
   background: #1F2C33;
   color: #FFF;
@@ -815,66 +887,8 @@ nav li:hover i {
   visibility: visible;
 }
 
-.sub-head .info-region {
-  background: #E6E6E6;
-  border-bottom: 1px solid #CCC;
-  border-top: 1px solid #CCC;
-  padding: 20px;
-  position: relative;
-}
-
-.sub-head .breadcrumbs {
-  display: inline-block;
-  font-weight: 700;
-}
-
-.sub-head .filter-toggle,
-.sub-head .option-toggle {
-  color: #058EF2;
-  cursor: pointer;
-  display: inline-block;
-  position: absolute;
-  right: 20px;
-  top: 20px;
-}
-
-.sub-head .filter-region {
-  background: #F2F2F2;
-  border-bottom: 1px solid #CCC;
-  display: none;
-  padding: 10px 20px;
-  position: relative;
-}
-
-.sub-head .option-region {
-  background: #FFF;
-  box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.5);
-  display: none;
-  padding: 15px;
-  position: absolute;
-  right: 10px;
-  z-index: 1;
-}
-
-.sub-head .option-region ul {
-  list-style-type: none;
-}
-
-.sub-head .option-region li {
-  margin-bottom: 7px;
-  color: #058EF2;
-}
-
-.sub-head .dropdown-button {
-  margin-right: 10px;
-}
-
-.sub-head .input-pretty {
-  display: inline-block;
-}
-
-.sub-head .show {
-  display: block;
+body {
+  overflow-x: hidden;
 }
 
 .container {
@@ -882,78 +896,80 @@ nav li:hover i {
 }
 
 .main {
-  margin: 20px 20px 20px 40px;
-  position: relative;
+  padding: 150px 20px 0;
 }
 
-.main h2 {
+.content h2 {
   font-size: 22px;
 }
 
-.main .info {
+.content .info {
   color: #999;
   display: inline;
 }
 
-.main .find {
-  position: absolute;
-  right: 0;
-  top: 0;
+.content .find {
+  float: right;
+  margin-top: -1%;
 }
 
-.main .find input {
+.content .find input {
   border: 1px solid #CCC;
   border-radius: 50px;
   padding: 7px 10px;
   width: 80%;
 }
 
-.main table {
+.content table {
   margin-top: 20px;
   table-layout: fixed;
   width: 100%;
 }
 
-.main table tr {
+.content table tr {
   border-bottom: 1px solid #CCC;
 }
 
-.main table .row-task {
+.content table .row-task {
   width: 50%;
 }
 
-.main table .row-due {
+.content table .row-due {
   width: 70px;
 }
 
-.main table th,
-.main table td {
+.content table th,
+.content table td {
   padding: 10px;
   position: relative;
 }
 
-.main table th:hover,
-.main table td:hover {
+.content table th:hover,
+.content table td:hover {
   color: #000;
 }
 
-.main table td {
+.content table td {
   color: #999;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-.main table td:hover {
+.content table tbody tr:hover {
+  background: #F2F9FD;
+}
+
+.content table tbody tr:hover td {
   color: #000;
 }
 
-.main table td:first-of-type {
+.content table td:first-of-type {
   color: #000;
   padding-left: 30px;
 }
 
-.main table td i {
+.content table td i {
   border: 1px solid #000;
   border-radius: 2px;
   cursor: pointer;
@@ -961,6 +977,207 @@ nav li:hover i {
   left: 5px;
   position: absolute;
   width: 16px;
+}
+
+.super-sidebar {
+  background: #FFF;
+  bottom: 0;
+  box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.5);
+  left: 100%;
+  padding: 20px;
+  position: fixed;
+  right: 0;
+  top: 130px;
+  transition: left 0.2s ease-in-out;
+  width: 50%;
+  z-index: 1;
+}
+
+.super-sidebar ul {
+  list-style-type: none;
+}
+
+.sidebar-active .main table tr:not(.active) td {
+  color: #CCC;
+}
+
+.sidebar-active .super-sidebar {
+  left: 50%;
+}
+
+.patient-profile .close {
+  color: #999;
+  cursor: pointer;
+  float: right;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.patient-profile h1 {
+  color: #058EF2;
+  font-size: 24px;
+}
+
+.patient-profile span {
+  color: #058EF2;
+  display: inline-block;
+  margin: 0 2px;
+}
+
+.patient-profile .overview {
+  margin-bottom: 20px;
+}
+
+.patient-profile .overview .more i {
+  cursor: pointer;
+  display: inline-block;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.patient-profile .risk-status {
+  border-bottom: 1px solid #CCC;
+  border-top: 1px solid #CCC;
+  color: #666;
+  margin-bottom: 20px;
+  padding: 15px 0;
+}
+
+.patient-profile .risk-status .open {
+  color: #00BF68;
+}
+
+.patient-profile .risk h3 {
+  color: #999;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.patient-profile .risk h2 {
+  font-size: 18px;
+}
+
+.patient-profile .risk-factor {
+  margin: 15px 0 20px;
+}
+
+.patient-profile .risk-factor i {
+  color: #058EF2;
+  display: inline-block;
+}
+
+.patient-profile .risk-factor span {
+  color: #000;
+  text-transform: initial;
+}
+
+.patient-profile .task-management {
+  margin-bottom: 40px;
+}
+
+.patient-profile .task-management li {
+  border-top: 1px solid #CCC;
+  cursor: pointer;
+  padding: 10px 0 10px 25px;
+  position: relative;
+}
+
+.patient-profile .task-management li:last-of-type {
+  border-bottom: 1px solid #CCC;
+}
+
+.patient-profile .task-management li:hover {
+  background: #F2F9FD;
+}
+
+.patient-profile .task-management li:hover span {
+  color: #058EF2;
+}
+
+.patient-profile .task-management span {
+  color: #999;
+}
+
+.patient-profile .task-management .add-task {
+  color: #058EF2;
+  font-weight: 600;
+}
+
+.patient-profile .task-management .add-task .font-icon-checkmark-empty {
+  border: 2px solid #058EF2;
+}
+
+.patient-profile .history {
+  max-width: 500px;
+}
+
+.patient-profile .history li,
+.patient-profile .history .assignee,
+.patient-profile .history .info {
+  color: #999;
+  font-size: 14px;
+}
+
+.patient-profile .history li {
+  margin: 5px 0;
+  padding-left: 30px;
+}
+
+.patient-profile .history li i {
+  left: 25px;
+  position: absolute;
+}
+
+.patient-profile .history .recent {
+  color: #000;
+  font-size: 16px;
+  margin: 15px 0;
+}
+
+.patient-profile .history .mention {
+  color: #058EF2;
+  display: inline;
+  font-weight: 700;
+}
+
+.patient-profile .history .info {
+  margin: 2px 0;
+}
+
+.patient-profile .history .font-icon-checkmark {
+  border: 1px solid #CCC;
+  border-radius: 2px;
+  color: #00BF68;
+}
+
+.patient-profile .history .add-comment {
+  border: 1px solid #CCC;
+  border-radius: 5px;
+  color: #058EF2;
+  cursor: pointer;
+  font-weight: 600;
+  max-width: 400px;
+  padding: 10px;
+}
+
+.patient-profile .history .add-comment i {
+  margin-right: 10px;
+}
+
+.patient-profile .footer {
+  background: #E6E6E6;
+  border-top: 1px solid #CCC;
+  bottom: 0;
+  left: 0;
+  padding: 15px;
+  position: absolute;
+  width: 100%;
+}
+
+.patient-profile .footer .follower {
+  font-weight: 600;
 }
 
 .button--blue, .button--red, .button--green, .button--white, .button--white--alt, .button--grey, .button--light-green, .button--light-blue, .button--light-gradient {
