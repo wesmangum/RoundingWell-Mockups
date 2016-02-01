@@ -46,207 +46,270 @@
 
         <div class="container" id="panel">
             <section class="header">
-                <div class="left">
-                    <i class="font-icon-menu menu"></i>
-                    <h1>Streator Memorial Hospital</h1>
-                </div>
-                <form action="/search" class="search">
-                    <input type="text" placeholder="Search for patients">
-                    <i class="font-icon-search"></i>
-                </form>
-                <div class="right">
-                    <p class="name has-notifications">Dr. Kalvin Johnson</p>
-                </div>
-            </section>
-
-            <section class="sub-head">
-                <div class="info-region">
-                    <div class="breadcrumbs">
-                        Tasks
+                <div class="main-head">
+                    <div class="left">
+                        <i class="font-icon-menu menu"></i>
+                        <h1>Streator Memorial Hospital</h1>
                     </div>
-                    <div class="filter-toggle">
-                        <i class="font-icon-setting-type"></i>
-                        Filter this list
-                    </div>
-                </div>
-
-                <div class="filter-region">
-                    <form action="/filter" class="filter">
-                        <div name="groups" id="groups" class="button--light-gradient dropdown-button">
-                            <option value="">All Groups</option>
-                            <i class="font-icon-arrow-down"></i>
-                        </div>
-                        <div name="patients" id="patients" class="button--light-gradient dropdown-button">
-                            <option value="1"> Louis Fisher</option>
-                            <i class="font-icon-arrow-down"></i>
-                        </div>
-                        <div name="times" id="times" class="button--light-gradient dropdown-button">
-                            <option value="">Next 7 Days</option>
-                            <i class="font-icon-arrow-down"></i>
-                        </div>
-                        <div class="input-pretty">
-                            <input type="checkbox" name="only-pathways" id="only-pathways">
-                            <label for="only-pathways">Only Pathways</label>
-                        </div>
+                    <form action="/search" class="search">
+                        <input type="text" placeholder="Search for patients">
+                        <i class="font-icon-search"></i>
                     </form>
-
-                    <div class="option-toggle">
-                        <div class="font-icon-setting-type"></div>
+                    <div class="right">
+                        <p class="name has-notifications">Dr. Kalvin Johnson</p>
                     </div>
-                    <div class="option-region">
-                        <ul>
-                            <li>Save as new view</li>
-                            <li>Update this saved view</li>
-                            <li>Rename this saved view</li>
-                            <li>Delete this saved view</li>
-                            <li>Set as home view</li>
-                        </ul>
+                </div>
+
+                <div class="sub-head">
+                    <div class="info-region">
+                        <div class="breadcrumbs">
+                            Tasks
+                        </div>
+                        <div class="filter-toggle">
+                            <i class="font-icon-setting-type"></i>
+                            Filter this list
+                        </div>
+                    </div>
+
+                    <div class="filter-region">
+                        <form action="/filter" class="filter">
+                            <div name="groups" id="groups" class="button--light-gradient dropdown-button">
+                                <option value="">All Groups</option>
+                                <i class="font-icon-arrow-down"></i>
+                            </div>
+                            <div name="patients" id="patients" class="button--light-gradient dropdown-button">
+                                <option value="1"> Louis Fisher</option>
+                                <i class="font-icon-arrow-down"></i>
+                            </div>
+                            <div name="times" id="times" class="button--light-gradient dropdown-button">
+                                <option value="">Next 7 Days</option>
+                                <i class="font-icon-arrow-down"></i>
+                            </div>
+                            <div class="input-pretty">
+                                <input type="checkbox" name="only-pathways" id="only-pathways">
+                                <label for="only-pathways">Only Pathways</label>
+                            </div>
+                        </form>
+
+                        <div class="option-toggle">
+                            <div class="font-icon-context-menu"></div>
+                        </div>
+                        <div class="option-region">
+                            <ul>
+                                <li>Save as new view</li>
+                                <li>Update this saved view</li>
+                                <li>Rename this saved view</li>
+                                <li>Delete this saved view</li>
+                                <li>Set as home view</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </section>
+
+
 
             <section class="main">
 
-                <h2>Current list view title</h2>
-                <div class="info">57 Tasks | 2 Due this week | 3 Overdue</div>
-                <form action="/find" class="find">
-                    <input type="text" placeholder="Find in list ...">
-                </form>
+                <div class="super-sidebar">
+                    <div class="patient-profile">
+                        <i class="close font-icon-plus"></i>
+                        <div class="heading">
+                            <h1>Mary Trainer</h1>
+                            <div class="overview">
+                                <span>10987650</span> &bull; <span>Female</span> &bull; <span>August 17, 1985 (Age 30)</span> &bull; <span>615-555-1212</span> &bull; <span>ESCO</span> &bull; <span class="more"><i class="font-icon-close"></i></span>
+                            </div>
+                        </div>
+                        <div class="risk-status">
+                            <span class="status open">This Risk is OPEN</span> | <span>Add Factor</span> | <span>View Printable Task</span> | <span>Close Risk</span>
+                        </div>
+                        <div class="risk">
+                            <h3>DM Care Plan</h3>
+                            <h2>Diabetes Management Barrier</h2>
+                            <div class="risk-factor">
+                                <i class="font-icon-arrow-right"></i>
+                                <span>This is a factor.</span>
+                            </div>
+                        </div>
+                        <div class="task-management">
+                            <ul>
+                                <li><i class="font-icon-checkmark-empty"></i>Double-check insurance coverage and confirm if patient is eligible for free supplies <span class="assignee">Robin Mankin &bull; 5 min <i class="font-icon-note"></i></span></li>
+                                <li class="add-task"><i class="font-icon-checkmark-empty"></i>Add Task</li>
+                            </ul>
+                        </div>
+                        <div class="history">
+                            <ul>
+                                <li><b>Risk</b> identified by <b>Roundingwell</b> for the first time. <span class="info">Jun 18 at 10:01 AM</span></li>
+                                <li><b>Pathway</b> started by <b>Mark Ott</b>. <span class="info">Jun 18 at 10:01 AM</span></li>
+                                <li><b>Risk</b> status set to <b>Open</b>. <span class="info">Jun 18 at 10:01 AM</span></li>
+                                <li class="recent">
+                                    <i class="font-icon-checkmark"></i> Follow up with patient's caregiver. <span class="assignee">Robin Mankin &bull; 5 min</span>
+                                    <div class="info">Marked complete by <b>Mark Ott</b> on Jun 23, 2015</div>
+                                </li>
+                                <li class="recent">
+                                    <i class="font-icon-discussion"></i> <b>Mark Ott</b> Hey <span class="mention">Robin Makin</span>, can you help me with this?
+                                    <div class="info">Jun 18 at 10:01 AM</div>
+                                </li>
+                                <li class="recent">
+                                    <i class="font-icon-checkmark"></i> Review current meds with pharmacist. <span class="assignee">Mark Ott &bull; 5 min</span>
+                                    <div class="info">Marked complete by <b>Mark Ott</b> on Jun 23, 2015</div>
+                                </li>
+                                <li class="recent">
+                                    <i class="font-icon-checkmark"></i> Note any medication changes in chart and this is a two line task. <span class="assignee">Mark Ott &bull; 5 min</span>
+                                    <div class="info">Marked complete by <b>Mark Ott</b> on Jun 23, 2015</div>
+                                </li>
+                            </ul>
+                            <div class="add-comment"><i class="font-icon-discussion"></i> Add Comment</div>
+                        </div>
+                        <div class="footer">
+                            Followers <i class="font-icon-group"></i> 3 <span class="follower">Luke F.</span> &bull; <span class="follower">Joanna S.</span> &bull; <span class="follower">Molly T.</span>
+                        </div>
+                    </div>
+                </div>
 
-                <table>
-                    <thead>
-                        <tr>
-                            <th class="pn-12--black-60--semibold--all-caps row-task">Task</th>
-                            <th class="pn-12--black-60--semibold--all-caps row-patient">Patient</th>
-                            <th class="pn-12--black-60--semibold--all-caps row-risk">Risk</th>
-                            <th class="pn-12--black-60--semibold--all-caps row-due"><i class="font-icon-carrot-down"></i> Due</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><i></i>Double-check insurance coverage and confirm if patient is eligible for free supplies and thing of that nature</td>
-                            <td>Johnny Rotten</td>
-                            <td>Blood Glucose Monitoring Compliance</td>
-                            <td>Dec 27</td>
-                        </tr>
-                        <tr>
-                            <td><i></i>Double-check insurance coverage and confirm if patient is eligible for free supplies</td>
-                            <td>Johnny Rotten</td>
-                            <td>Blood Glucose Monitoring Compliance</td>
-                            <td>Dec 27</td>
-                        </tr>
-                        <tr>
-                            <td><i></i>Double-check insurance coverage and confirm if patient is eligible for free supplies</td>
-                            <td>Johnny Rotten</td>
-                            <td>Blood Glucose Monitoring Compliance</td>
-                            <td>Dec 27</td>
-                        </tr>
-                        <tr>
-                            <td><i></i>Double-check insurance coverage and confirm if patient is eligible for free supplies</td>
-                            <td>Johnny Rotten</td>
-                            <td>Blood Glucose Monitoring Compliance</td>
-                            <td>Dec 27</td>
-                        </tr>
-                        <tr>
-                            <td><i></i>Double-check insurance coverage and confirm if patient is eligible for free supplies</td>
-                            <td>Johnny Rotten</td>
-                            <td>Blood Glucose Monitoring Compliance</td>
-                            <td>Dec 27</td>
-                        </tr>
-                        <tr>
-                            <td><i></i>Double-check insurance coverage and confirm if patient is eligible for free supplies</td>
-                            <td>Johnny Rotten</td>
-                            <td>Blood Glucose Monitoring Compliance</td>
-                            <td>Dec 27</td>
-                        </tr>
-                        <tr>
-                            <td><i></i>Double-check insurance coverage and confirm if patient is eligible for free supplies</td>
-                            <td>Johnny Rotten</td>
-                            <td>Blood Glucose Monitoring Compliance</td>
-                            <td>Dec 27</td>
-                        </tr>
-                        <tr>
-                            <td><i></i>Double-check insurance coverage and confirm if patient is eligible for free supplies</td>
-                            <td>Johnny Rotten</td>
-                            <td>Blood Glucose Monitoring Compliance</td>
-                            <td>Dec 27</td>
-                        </tr>
-                        <tr>
-                            <td><i></i>Double-check insurance coverage and confirm if patient is eligible for free supplies</td>
-                            <td>Johnny Rotten</td>
-                            <td>Blood Glucose Monitoring Compliance</td>
-                            <td>Dec 27</td>
-                        </tr>
-                        <tr>
-                            <td><i></i>Double-check insurance coverage and confirm if patient is eligible for free supplies</td>
-                            <td>Johnny Rotten</td>
-                            <td>Blood Glucose Monitoring Compliance</td>
-                            <td>Dec 27</td>
-                        </tr>
-                        <tr>
-                            <td><i></i>Double-check insurance coverage and confirm if patient is eligible for free supplies</td>
-                            <td>Johnny Rotten</td>
-                            <td>Blood Glucose Monitoring Compliance</td>
-                            <td>Dec 27</td>
-                        </tr>
-                        <tr>
-                            <td><i></i>Double-check insurance coverage and confirm if patient is eligible for free supplies</td>
-                            <td>Johnny Rotten</td>
-                            <td>Blood Glucose Monitoring Compliance</td>
-                            <td>Dec 27</td>
-                        </tr>
-                        <tr>
-                            <td><i></i>Double-check insurance coverage and confirm if patient is eligible for free supplies</td>
-                            <td>Johnny Rotten</td>
-                            <td>Blood Glucose Monitoring Compliance</td>
-                            <td>Dec 27</td>
-                        </tr>
-                        <tr>
-                            <td><i></i>Double-check insurance coverage and confirm if patient is eligible for free supplies</td>
-                            <td>Johnny Rotten</td>
-                            <td>Blood Glucose Monitoring Compliance</td>
-                            <td>Dec 27</td>
-                        </tr>
-                        <tr>
-                            <td><i></i>Double-check insurance coverage and confirm if patient is eligible for free supplies</td>
-                            <td>Johnny Rotten</td>
-                            <td>Blood Glucose Monitoring Compliance</td>
-                            <td>Dec 27</td>
-                        </tr>
-                        <tr>
-                            <td><i></i>Double-check insurance coverage and confirm if patient is eligible for free supplies</td>
-                            <td>Johnny Rotten</td>
-                            <td>Blood Glucose Monitoring Compliance</td>
-                            <td>Dec 27</td>
-                        </tr>
-                        <tr>
-                            <td><i></i>Double-check insurance coverage and confirm if patient is eligible for free supplies</td>
-                            <td>Johnny Rotten</td>
-                            <td>Blood Glucose Monitoring Compliance</td>
-                            <td>Dec 27</td>
-                        </tr>
-                        <tr>
-                            <td><i></i>Double-check insurance coverage and confirm if patient is eligible for free supplies</td>
-                            <td>Johnny Rotten</td>
-                            <td>Blood Glucose Monitoring Compliance</td>
-                            <td>Dec 27</td>
-                        </tr>
-                        <tr>
-                            <td><i></i>Double-check insurance coverage and confirm if patient is eligible for free supplies</td>
-                            <td>Johnny Rotten</td>
-                            <td>Blood Glucose Monitoring Compliance</td>
-                            <td>Dec 27</td>
-                        </tr>
-                        <tr>
-                            <td><i></i>Double-check insurance coverage and confirm if patient is eligible for free supplies</td>
-                            <td>Johnny Rotten</td>
-                            <td>Blood Glucose Monitoring Compliance</td>
-                            <td>Dec 27</td>
-                        </tr>
+                <div class="content">
+                    <h2>Current list view title</h2>
+                    <div class="info">57 Tasks | 2 Due this week | 3 Overdue</div>
+                    <form action="/find" class="find">
+                        <input type="text" placeholder="Find in list ...">
+                    </form>
 
-                    </tbody>
-                </table>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th class="pn-12--black-60--semibold--all-caps row-task">Task</th>
+                                <th class="pn-12--black-60--semibold--all-caps row-patient">Patient</th>
+                                <th class="pn-12--black-60--semibold--all-caps row-risk">Risk</th>
+                                <th class="pn-12--black-60--semibold--all-caps row-due"><i class="font-icon-carrot-down"></i> Due</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><i class="font-icon-checkmark-empty"></i>Double-check insurance coverage and confirm if patient is eligible for free supplies and thing of that nature</td>
+                                <td>Johnny Rotten</td>
+                                <td>Blood Glucose Monitoring Compliance</td>
+                                <td>Dec 27</td>
+                            </tr>
+                            <tr>
+                                <td><i class="font-icon-checkmark-empty"></i>Double-check insurance coverage and confirm if patient is eligible for free supplies</td>
+                                <td>Johnny Rotten</td>
+                                <td>Blood Glucose Monitoring Compliance</td>
+                                <td>Dec 27</td>
+                            </tr>
+                            <tr>
+                                <td><i class="font-icon-checkmark-empty"></i>Double-check insurance coverage and confirm if patient is eligible for free supplies</td>
+                                <td>Johnny Rotten</td>
+                                <td>Blood Glucose Monitoring Compliance</td>
+                                <td>Dec 27</td>
+                            </tr>
+                            <tr>
+                                <td><i class="font-icon-checkmark-empty"></i>Double-check insurance coverage and confirm if patient is eligible for free supplies</td>
+                                <td>Johnny Rotten</td>
+                                <td>Blood Glucose Monitoring Compliance</td>
+                                <td>Dec 27</td>
+                            </tr>
+                            <tr>
+                                <td><i class="font-icon-checkmark-empty"></i>Double-check insurance coverage and confirm if patient is eligible for free supplies</td>
+                                <td>Johnny Rotten</td>
+                                <td>Blood Glucose Monitoring Compliance</td>
+                                <td>Dec 27</td>
+                            </tr>
+                            <tr>
+                                <td><i class="font-icon-checkmark-empty"></i>Double-check insurance coverage and confirm if patient is eligible for free supplies</td>
+                                <td>Johnny Rotten</td>
+                                <td>Blood Glucose Monitoring Compliance</td>
+                                <td>Dec 27</td>
+                            </tr>
+                            <tr>
+                                <td><i class="font-icon-checkmark-empty"></i>Double-check insurance coverage and confirm if patient is eligible for free supplies</td>
+                                <td>Johnny Rotten</td>
+                                <td>Blood Glucose Monitoring Compliance</td>
+                                <td>Dec 27</td>
+                            </tr>
+                            <tr>
+                                <td><i class="font-icon-checkmark-empty"></i>Double-check insurance coverage and confirm if patient is eligible for free supplies</td>
+                                <td>Johnny Rotten</td>
+                                <td>Blood Glucose Monitoring Compliance</td>
+                                <td>Dec 27</td>
+                            </tr>
+                            <tr>
+                                <td><i class="font-icon-checkmark-empty"></i>Double-check insurance coverage and confirm if patient is eligible for free supplies</td>
+                                <td>Johnny Rotten</td>
+                                <td>Blood Glucose Monitoring Compliance</td>
+                                <td>Dec 27</td>
+                            </tr>
+                            <tr>
+                                <td><i class="font-icon-checkmark-empty"></i>Double-check insurance coverage and confirm if patient is eligible for free supplies</td>
+                                <td>Johnny Rotten</td>
+                                <td>Blood Glucose Monitoring Compliance</td>
+                                <td>Dec 27</td>
+                            </tr>
+                            <tr>
+                                <td><i class="font-icon-checkmark-empty"></i>Double-check insurance coverage and confirm if patient is eligible for free supplies</td>
+                                <td>Johnny Rotten</td>
+                                <td>Blood Glucose Monitoring Compliance</td>
+                                <td>Dec 27</td>
+                            </tr>
+                            <tr>
+                                <td><i class="font-icon-checkmark-empty"></i>Double-check insurance coverage and confirm if patient is eligible for free supplies</td>
+                                <td>Johnny Rotten</td>
+                                <td>Blood Glucose Monitoring Compliance</td>
+                                <td>Dec 27</td>
+                            </tr>
+                            <tr>
+                                <td><i class="font-icon-checkmark-empty"></i>Double-check insurance coverage and confirm if patient is eligible for free supplies</td>
+                                <td>Johnny Rotten</td>
+                                <td>Blood Glucose Monitoring Compliance</td>
+                                <td>Dec 27</td>
+                            </tr>
+                            <tr>
+                                <td><i class="font-icon-checkmark-empty"></i>Double-check insurance coverage and confirm if patient is eligible for free supplies</td>
+                                <td>Johnny Rotten</td>
+                                <td>Blood Glucose Monitoring Compliance</td>
+                                <td>Dec 27</td>
+                            </tr>
+                            <tr>
+                                <td><i class="font-icon-checkmark-empty"></i>Double-check insurance coverage and confirm if patient is eligible for free supplies</td>
+                                <td>Johnny Rotten</td>
+                                <td>Blood Glucose Monitoring Compliance</td>
+                                <td>Dec 27</td>
+                            </tr>
+                            <tr>
+                                <td><i class="font-icon-checkmark-empty"></i>Double-check insurance coverage and confirm if patient is eligible for free supplies</td>
+                                <td>Johnny Rotten</td>
+                                <td>Blood Glucose Monitoring Compliance</td>
+                                <td>Dec 27</td>
+                            </tr>
+                            <tr>
+                                <td><i class="font-icon-checkmark-empty"></i>Double-check insurance coverage and confirm if patient is eligible for free supplies</td>
+                                <td>Johnny Rotten</td>
+                                <td>Blood Glucose Monitoring Compliance</td>
+                                <td>Dec 27</td>
+                            </tr>
+                            <tr>
+                                <td><i class="font-icon-checkmark-empty"></i>Double-check insurance coverage and confirm if patient is eligible for free supplies</td>
+                                <td>Johnny Rotten</td>
+                                <td>Blood Glucose Monitoring Compliance</td>
+                                <td>Dec 27</td>
+                            </tr>
+                            <tr>
+                                <td><i class="font-icon-checkmark-empty"></i>Double-check insurance coverage and confirm if patient is eligible for free supplies</td>
+                                <td>Johnny Rotten</td>
+                                <td>Blood Glucose Monitoring Compliance</td>
+                                <td>Dec 27</td>
+                            </tr>
+                            <tr>
+                                <td><i class="font-icon-checkmark-empty"></i>Double-check insurance coverage and confirm if patient is eligible for free supplies</td>
+                                <td>Johnny Rotten</td>
+                                <td>Blood Glucose Monitoring Compliance</td>
+                                <td>Dec 27</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
             </section>
+
         </div>
 
 		<script src="assets/js/vendor.js"></script>
