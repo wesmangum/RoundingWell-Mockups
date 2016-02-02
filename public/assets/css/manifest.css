@@ -984,6 +984,7 @@ body {
   bottom: 0;
   box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.5);
   left: 100%;
+  overflow: auto;
   padding: 20px;
   position: fixed;
   right: 0;
@@ -1005,7 +1006,7 @@ body {
   left: 50%;
 }
 
-.patient-profile .close {
+.patient-profile-overview .close {
   color: #999;
   cursor: pointer;
   float: right;
@@ -1014,22 +1015,22 @@ body {
   transform: rotate(45deg);
 }
 
-.patient-profile h1 {
+.patient-profile-overview h1 {
   color: #058EF2;
   font-size: 24px;
 }
 
-.patient-profile span {
+.patient-profile-overview span {
   color: #058EF2;
   display: inline-block;
   margin: 0 2px;
 }
 
-.patient-profile .overview {
+.patient-profile-overview .overview {
   margin-bottom: 20px;
 }
 
-.patient-profile .overview .more i {
+.patient-profile-overview .overview .more i {
   cursor: pointer;
   display: inline-block;
   -webkit-transform: rotate(45deg);
@@ -1037,7 +1038,7 @@ body {
   transform: rotate(45deg);
 }
 
-.patient-profile .risk-status {
+.patient-profile-overview .risk-status {
   border-bottom: 1px solid #CCC;
   border-top: 1px solid #CCC;
   color: #666;
@@ -1045,114 +1046,114 @@ body {
   padding: 15px 0;
 }
 
-.patient-profile .risk-status .open {
+.patient-profile-overview .risk-status .open {
   color: #00BF68;
 }
 
-.patient-profile .risk h3 {
+.patient-profile-overview .risk h3 {
   color: #999;
   font-size: 14px;
   text-transform: uppercase;
 }
 
-.patient-profile .risk h2 {
+.patient-profile-overview .risk h2 {
   font-size: 18px;
 }
 
-.patient-profile .risk-factor {
+.patient-profile-overview .risk-factor {
   margin: 15px 0 20px;
 }
 
-.patient-profile .risk-factor i {
+.patient-profile-overview .risk-factor i {
   color: #058EF2;
   display: inline-block;
 }
 
-.patient-profile .risk-factor span {
+.patient-profile-overview .risk-factor span {
   color: #000;
   text-transform: initial;
 }
 
-.patient-profile .task-management {
+.patient-profile-overview .task-management {
   margin-bottom: 40px;
 }
 
-.patient-profile .task-management li {
+.patient-profile-overview .task-management li {
   border-top: 1px solid #CCC;
   cursor: pointer;
   padding: 10px 0 10px 25px;
   position: relative;
 }
 
-.patient-profile .task-management li:last-of-type {
+.patient-profile-overview .task-management li:last-of-type {
   border-bottom: 1px solid #CCC;
 }
 
-.patient-profile .task-management li:hover {
+.patient-profile-overview .task-management li:hover {
   background: #F2F9FD;
 }
 
-.patient-profile .task-management li:hover span {
+.patient-profile-overview .task-management li:hover span {
   color: #058EF2;
 }
 
-.patient-profile .task-management span {
+.patient-profile-overview .task-management span {
   color: #999;
 }
 
-.patient-profile .task-management .add-task {
+.patient-profile-overview .task-management .add-task {
   color: #058EF2;
   font-weight: 600;
 }
 
-.patient-profile .task-management .add-task .font-icon-checkmark-empty {
+.patient-profile-overview .task-management .add-task .font-icon-checkmark-empty {
   border: 2px solid #058EF2;
 }
 
-.patient-profile .history {
+.patient-profile-overview .history {
   max-width: 500px;
 }
 
-.patient-profile .history li,
-.patient-profile .history .assignee,
-.patient-profile .history .info {
+.patient-profile-overview .history li,
+.patient-profile-overview .history .assignee,
+.patient-profile-overview .history .info {
   color: #999;
   font-size: 14px;
 }
 
-.patient-profile .history li {
+.patient-profile-overview .history li {
   margin: 5px 0;
   padding-left: 30px;
 }
 
-.patient-profile .history li i {
+.patient-profile-overview .history li i {
   left: 25px;
   position: absolute;
 }
 
-.patient-profile .history .recent {
+.patient-profile-overview .history .recent {
   color: #000;
   font-size: 16px;
   margin: 15px 0;
 }
 
-.patient-profile .history .mention {
+.patient-profile-overview .history .mention {
   color: #058EF2;
   display: inline;
   font-weight: 700;
 }
 
-.patient-profile .history .info {
+.patient-profile-overview .history .info {
   margin: 2px 0;
 }
 
-.patient-profile .history .font-icon-checkmark {
+.patient-profile-overview .history .font-icon-checkmark {
   border: 1px solid #CCC;
   border-radius: 2px;
   color: #00BF68;
 }
 
-.patient-profile .history .add-comment {
+.patient-profile-overview .history .add-comment {
   border: 1px solid #CCC;
   border-radius: 5px;
   color: #058EF2;
@@ -1162,21 +1163,21 @@ body {
   padding: 10px;
 }
 
-.patient-profile .history .add-comment i {
+.patient-profile-overview .history .add-comment i {
   margin-right: 10px;
 }
 
-.patient-profile .footer {
+.patient-profile-overview .footer {
   background: #E6E6E6;
   border-top: 1px solid #CCC;
   bottom: 0;
   left: 0;
   padding: 15px;
   position: absolute;
-  width: 100%;
+  right: 0;
 }
 
-.patient-profile .footer .follower {
+.patient-profile-overview .footer .follower {
   font-weight: 600;
 }
 
