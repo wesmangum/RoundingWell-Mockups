@@ -6,5 +6,5 @@ $('section.main tbody tr').on('click', function() {
 
 $('.super-sidebar .close').on('click', function() {
     $('tr.active').removeClass('active');
-    $('body').toggleClass('sidebar-active');
+    $('body').removeClass('sidebar-active');
 });

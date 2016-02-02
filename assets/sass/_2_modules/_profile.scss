@@ -1,10 +1,5 @@
-.patient-profile-overview {
-    .close {
-        color: $black-60;
-        cursor: pointer;
-        float: right;
-        transform: rotate(45deg);
-    }
+.patient-profile {
+    width: 100%;
 
     h1 {
         color: color(blue, light);
@@ -18,7 +13,8 @@
     }
 
     .overview {
-        margin-bottom: 20px;
+        border-bottom: 1px solid $black-80;
+        padding-bottom: 20px;
 
         .more i {
             cursor: pointer;
@@ -29,7 +25,6 @@
 
     .risk-status {
         border-bottom: 1px solid $black-80;
-        border-top: 1px solid $black-80;
         color: $black-40;
         margin-bottom: 20px;
         padding: 15px 0;
@@ -155,20 +150,6 @@
             i {
                 margin-right: 10px;
             }
-        }
-    }
-
-    .footer {
-        background: $black-90;
-        border-top: 1px solid $black-80;
-        bottom: 0;
-        left: 0;
-        padding: 15px;
-        position: absolute;
-        right: 0;
-
-        .follower {
-            font-weight: $semibold-font-weight;
         }
     }
 }
