@@ -1,16 +1,31 @@
+html,
+body {
+    height: 100%;
+}
+
 body {
     overflow-x: hidden;
 }
 
 .container {
-    background: $white;
+    min-height: 100%;
+}
+
+.hidden {
+    display: none;
 }
 
 .main {
+    background: $white;
     padding: 150px 20px 0;
 }
 
 .content {
+
+    &.half {
+        width: 50%;
+    }
+
     h2 {
         font-size: 22px;
     }
@@ -22,7 +37,7 @@ body {
 
     .find {
         float: right;
-        margin-top: -1%;
+        margin-top: -25px;
 
         input {
             border: 1px solid $black-80;
@@ -79,14 +94,13 @@ body {
             padding-left: 30px;
         }
 
-        td i {
+        td .font-icon-checkmark {
             border: 1px solid $black;
             border-radius: 2px;
+            color: transparent;
             cursor: pointer;
-            height: 16px;
             left: 5px;
             position: absolute;
-            width: 16px;
         }
     }
 }

@@ -3,11 +3,11 @@
     bottom: 0;
     box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.5);
     overflow: auto;
-    padding: 20px;
+    padding: 25px 25px 0;
     position: fixed;
     right: -100%;
     top: 130px;
-    transition: right 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
     width: 50%;
     z-index: 1;
 
@@ -15,7 +15,7 @@
         color: $black-60;
         cursor: pointer;
         position: absolute;
-        right: 20px;
+        right: 25px;
         transform: rotate(45deg);
         z-index: 1;
     }
@@ -28,10 +28,9 @@
         background: $black-90;
         border-top: 1px solid $black-80;
         bottom: 0;
-        left: 0;
+        margin: 50px -25px 0;
         padding: 15px;
-        position: absolute;
-        right: 0;
+        position: relative;
         z-index: 1;
 
         .follower {

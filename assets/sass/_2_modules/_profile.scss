@@ -1,9 +1,17 @@
 .patient-profile {
     width: 100%;
 
+    .heading {
+        overflow: hidden;
+
+        h1 {
+            color: color(blue, light);
+        }
+    }
+
     h1 {
-        color: color(blue, light);
         font-size: 24px;
+        margin-bottom: 5px;
     }
 
     span {
@@ -23,14 +31,41 @@
         }
     }
 
-    .risk-status {
+    .risk-status,
+    .dashboard {
         border-bottom: 1px solid $black-80;
         color: $black-40;
         margin-bottom: 20px;
         padding: 15px 0;
 
-        .open {
+        .info {
+            float: right;
+        }
+    }
+
+    .dashboard {
+        font-size: 16px;
+        font-weight: $semibold-font-weight;
+        padding: 15px 25px;
+
+        .current,
+        .info {
+            color: $black;
+        }
+
+        .info {
+            font-size: 14px;
+            font-weight: normal;
+        }
+    }
+
+    .status {
+        &.open {
             color: color(green);
+        }
+
+        &.needs-attention {
+            color: color(red);
         }
     }
 
@@ -47,7 +82,7 @@
     }
 
     .risk-factor {
-        margin: 15px 0 20px;
+        margin: 15px 0 25px;
 
         i {
             color: color(blue, light);
@@ -60,26 +95,38 @@
         }
     }
 
-    .task-management {
+    .task-management,
+    .current-list {
         margin-bottom: 40px;
+
+        ul {
+            list-style-type: none;
+        }
 
         li {
             border-top: 1px solid $black-80;
             cursor: pointer;
-            padding: 10px 0 10px 25px;
+            padding: 10px 0 10px 30px;
             position: relative;
 
             &:last-of-type {
                 border-bottom: 1px solid $black-80;
             }
+
+            &:hover,
+            &.active {
+                background: color(light_blue);
+            }
         }
 
-        li:hover {
-            background: color(light_blue);
-
-            span {
-                color: color(blue, light);
-            }
+        .font-icon-checkmark {
+            border: 1px solid $black;
+            border-radius: 2px;
+            color: transparent;
+            cursor: pointer;
+            font-size: 14px;
+            left: 5px;
+            position: absolute;
         }
 
         span {
@@ -90,14 +137,45 @@
             color: color(blue, light);
             font-weight: $semibold-font-weight;
 
-            .font-icon-checkmark-empty {
+            .font-icon-checkmark {
                 border: 2px solid color(blue, light);
             }
         }
     }
 
+    .current-list {
+        li {
+            padding: 15px 25px;
+
+            &:first-of-type {
+                border-top: 0;
+            }
+        }
+
+        h3,
+        h2,
+        div {
+            margin: 3px 0;
+        }
+
+        .right {
+            position: absolute;
+            right: 25px;
+            text-align: right;
+            top: 10px;
+        }
+
+        .id {
+            color: $black-60;
+        }
+    }
+
     .history {
         max-width: 500px;
+
+        ul {
+            list-style-type: none;
+        }
 
         li,
         .assignee,
@@ -108,7 +186,7 @@
 
         li {
             margin: 5px 0;
-            padding-left: 30px;
+            padding-left: 25px;
 
             i {
                 left: 25px;
@@ -116,7 +194,7 @@
             }
         }
 
-        .recent {
+        .complete {
             color: $black;
             font-size: 16px;
             margin: 15px 0;
@@ -139,16 +217,19 @@
         }
 
         .add-comment {
-            border: 1px solid $black-80;
-            border-radius: 5px;
-            color: color(blue, light);
-            cursor: pointer;
-            font-weight: $semibold-font-weight;
+            display: block;
             max-width: 400px;
-            padding: 10px;
+            text-align: left;
+            width: 100%;
 
             i {
                 margin-right: 10px;
+            }
+        }
+
+        &.recent {
+            ul {
+                margin-bottom: 25px;
             }
         }
     }

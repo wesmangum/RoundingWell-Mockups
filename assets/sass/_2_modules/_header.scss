@@ -86,6 +86,13 @@
             font-weight: $bold-font-weight;
         }
 
+        .numbers {
+            display: none;
+            left: 50%;
+            position: absolute;
+            transform: translateX(-50%);
+        }
+
         .filter-toggle,
         .option-toggle {
             color: color(blue, light);
@@ -134,6 +141,10 @@
 
         .show {
             display: block;
+
+            &.numbers {
+                display: inline-block;
+            }
         }
     }
 

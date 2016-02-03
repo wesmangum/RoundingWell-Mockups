@@ -3,6 +3,7 @@ var filterRegion = $('.filter-region');
 
 filterToggle.on('click', function() {
     filterRegion.toggleClass('show');
+    $('.numbers').toggleClass('show');
 });
 
 var optionToggle = $('.option-toggle');
