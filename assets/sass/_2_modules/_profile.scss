@@ -9,6 +9,10 @@
         }
     }
 
+    &.content h1 {
+        color: $black;
+    }
+
     h1 {
         font-size: 24px;
         margin-bottom: 5px;
@@ -21,7 +25,6 @@
     }
 
     .overview {
-        border-bottom: 1px solid $black-80;
         padding-bottom: 20px;
 
         .more i {
@@ -34,6 +37,7 @@
     .risk-status,
     .dashboard {
         border-bottom: 1px solid $black-80;
+        border-top: 1px solid $black-80;
         color: $black-40;
         margin-bottom: 20px;
         padding: 15px 0;
@@ -44,6 +48,7 @@
     }
 
     .dashboard {
+        border-top: 1px solid $black-80;
         font-size: 16px;
         font-weight: $semibold-font-weight;
         padding: 15px 25px;

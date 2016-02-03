@@ -365,7 +365,7 @@ textarea {
   clear: both;
 }
 
-#menu {
+.menu {
   -webkit-overflow-scrolling: touch;
   bottom: 0;
   display: block;
@@ -378,20 +378,11 @@ textarea {
   z-index: 0;
 }
 
-#panel {
+.panel {
   box-shadow: -3px 0 3px 0 rgba(0, 0, 0, 0.75);
   margin-left: 0;
   position: relative;
-  transition: margin-left 0.2s ease-in-out;
   z-index: 1;
-}
-
-.slideout-open #panel {
-  margin-left: 226px;
-}
-
-.slideout-open .sidebar-active .super-sidebar {
-  width: calc(50% - (226px / 2));
 }
 
 .u-margin--t-2 {
@@ -760,7 +751,7 @@ h6 {
   top: 20px;
 }
 
-.header .menu {
+.header .menu-toggle {
   cursor: pointer;
   left: 0;
   position: absolute;
@@ -1018,9 +1009,8 @@ body {
   overflow: auto;
   padding: 25px 25px 0;
   position: fixed;
-  right: -100%;
+  right: -51%;
   top: 130px;
-  transition: all 0.2s ease-in-out;
   width: 50%;
   z-index: 1;
 }
@@ -1055,12 +1045,8 @@ body {
   font-weight: 600;
 }
 
-.sidebar-active .main table tr:not(.active) td {
+.super-sidebar.open + .content table tr:not(.active) td {
   color: #CCC;
-}
-
-.sidebar-active .super-sidebar {
-  right: 0;
 }
 
 .patient-profile {
@@ -1075,6 +1061,10 @@ body {
   color: #058EF2;
 }
 
+.patient-profile.content h1 {
+  color: #000;
+}
+
 .patient-profile h1 {
   font-size: 24px;
   margin-bottom: 5px;
@@ -1087,7 +1077,6 @@ body {
 }
 
 .patient-profile .overview {
-  border-bottom: 1px solid #CCC;
   padding-bottom: 20px;
 }
 
@@ -1102,6 +1091,7 @@ body {
 .patient-profile .risk-status,
 .patient-profile .dashboard {
   border-bottom: 1px solid #CCC;
+  border-top: 1px solid #CCC;
   color: #666;
   margin-bottom: 20px;
   padding: 15px 0;
@@ -1113,6 +1103,7 @@ body {
 }
 
 .patient-profile .dashboard {
+  border-top: 1px solid #CCC;
   font-size: 16px;
   font-weight: 600;
   padding: 15px 25px;

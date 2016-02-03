@@ -5,9 +5,8 @@
     overflow: auto;
     padding: 25px 25px 0;
     position: fixed;
-    right: -100%;
+    right: -51%;
     top: 130px;
-    transition: all 0.2s ease-in-out;
     width: 50%;
     z-index: 1;
 
@@ -38,14 +37,8 @@
             font-weight: $semibold-font-weight;
         }
     }
-}
 
-.sidebar-active {
-    .main table tr:not(.active) td {
+    &.open + .content table tr:not(.active) td {
         color: $black-80;
-    }
-
-    .super-sidebar {
-        right: 0;
     }
 }

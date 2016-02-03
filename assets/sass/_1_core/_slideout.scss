@@ -1,4 +1,4 @@
-#menu {
+.menu {
     -webkit-overflow-scrolling: touch;
     bottom: 0;
     display: block;
@@ -11,20 +11,9 @@
     z-index: 0;
 }
 
-#panel {
+.panel {
     box-shadow: -3px 0 3px 0 rgba(0, 0, 0, 0.75);
     margin-left: 0;
     position: relative;
-    transition: margin-left 0.2s ease-in-out;
     z-index: 1;
-}
-
-.slideout-open {
-    #panel {
-        margin-left: 226px;
-    }
-
-    .sidebar-active .super-sidebar {
-        width: calc(50% - (226px / 2));
-    }
 }
