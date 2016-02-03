@@ -1,21 +1,34 @@
 var filterToggle = $('.filter-toggle');
 var filterRegion = $('.filter-region');
+var optionToggle = $('.option-toggle');
+var optionRegion = $('.option-region');
 
 filterToggle.on('click', function() {
     filterRegion.toggleClass('show');
     $('.numbers').toggleClass('show');
 });
 
-var optionToggle = $('.option-toggle');
-var optionRegion = $('.option-region');
-
 optionToggle.on('click', function() {
     optionRegion.toggleClass('show');
 });
 
-$('.menu').on('click', function() {
-    $('html').toggleClass('slideout-open');
+var $panel = $('.panel');
+var $superSidebar = $('.super-sidebar');
+
+$('.menu-toggle').on('click', function() {
+    if ($panel.hasClass('open')) {
+        $panel.velocity({ marginLeft: '0' });
+        $superSidebar.velocity({ width: '+=113px' });
+    } else {
+        $panel.velocity({ marginLeft: '226px' });
+        $superSidebar.velocity({ width: '-=113px' });
+    }
+
+    $panel.toggleClass('open');
 });
+
+var $superSidebar = $('.super-sidebar');
+var $content = $('.content');
 
 $('.content tbody tr').on('click', function() {
     toggleSuperSidebar(this);
@@ -23,29 +36,51 @@ $('.content tbody tr').on('click', function() {
 
 $(document).on('click', '.content .risk', function() {
     toggleSuperSidebar(this);
-    $('.content').toggleClass('half');
+    toggleHalfView();
 });
 
 $('.super-sidebar .close').on('click', function() {
     toggleSuperSidebar();
-    $('.content').removeClass('half');
+    $content.velocity({ width: '100%' }).removeClass('half');
 });
 
 $('.super-sidebar .expand').on('click', function() {
-    var html = $('.super-sidebar .heading').html();
-    html += $('section.profile').html();
-
-    $('.content').addClass('patient-profile half').html(html);
-
-    $('.super-sidebar .heading').animate({
-        height: 0
-    }, 200);
+    var html = $('section.profile').html();
+    $content.css({ width: '50%' }).addClass('patient-profile half').html(html);
+    $('.super-sidebar .heading').velocity({ height: 0 });
+    $('.super-sidebar .risk-status').css('border-top', 'none');
+    toggleActive($content.find('.risk:first-of-type'));
 });
 
 function toggleSuperSidebar(ele) {
-    $('.active').removeClass('active');
+    var right;
+    if ($superSidebar.hasClass('open')) {
+        toggleActive();
+        right = '-51%';
+    } else {
+        toggleActive(ele);
+        right = '0%';
+    }
+    $superSidebar.velocity({ right: right });
+    $superSidebar.toggleClass('open');
+}
+
+function toggleActive(ele) {
+    var $active = $('.active');
+    if ($active) {
+        $active.removeClass('active');
+    }
     if (ele) {
         $(ele).addClass('active');
     }
-    $('body').toggleClass('sidebar-active');
 }
+
+function toggleHalfView() {
+    var width = $content.hasClass('half') ? '100%' : '50%';
+    $content.velocity({ width: width });
+    $content.toggleClass('half');
+}
+
+$.Velocity.defaults.easing = 'easeInOut';
+$.Velocity.defaults.duration = 200;
+$.Velocity.defaults.queue = false;
