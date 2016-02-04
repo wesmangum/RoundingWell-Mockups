@@ -1,4 +1,5 @@
 .patient-profile {
+    padding: 25px 25px 0;
     width: 100%;
 
     .heading {
@@ -30,6 +31,7 @@
         .more i {
             cursor: pointer;
             display: inline-block;
+            font-size: 12px;
             transform: rotate(45deg);
         }
     }

@@ -735,7 +735,6 @@ h6 {
   position: absolute;
   right: 8px;
   top: 8px;
-  z-index: -1;
 }
 
 .header .left {
@@ -1006,8 +1005,8 @@ body {
   background: #FFF;
   bottom: 0;
   box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.5);
-  overflow: auto;
-  padding: 25px 25px 0;
+  box-sizing: content-box;
+  overflow-x: hidden;
   position: fixed;
   right: -51%;
   top: 130px;
@@ -1020,6 +1019,7 @@ body {
   cursor: pointer;
   position: absolute;
   right: 25px;
+  top: 25px;
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
@@ -1034,8 +1034,8 @@ body {
   background: #E6E6E6;
   border-top: 1px solid #CCC;
   bottom: 0;
-  margin: 50px -25px 0;
-  padding: 15px;
+  margin: 50px 0 0;
+  padding: 15px 25px;
   position: relative;
   z-index: 1;
 }
@@ -1050,6 +1050,7 @@ body {
 }
 
 .patient-profile {
+  padding: 25px 25px 0;
   width: 100%;
 }
 
@@ -1083,6 +1084,7 @@ body {
 .patient-profile .overview .more i {
   cursor: pointer;
   display: inline-block;
+  font-size: 12px;
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
