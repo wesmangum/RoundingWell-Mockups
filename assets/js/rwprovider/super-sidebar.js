@@ -18,6 +18,7 @@ $superSidebar.find('.close').on('click', function() {
 $superSidebar.find('.expand').on('click', function() {
     var html = $('section.profile').html();
     $content.css({ width: '50%' }).addClass('patient-profile half').html(html);
+    window.scrollTo(0, 0);
     $superSidebar.find('.heading').velocity({ height: 0 });
     $superSidebar.find('.risk-status').css('border-top', 'none');
     toggleActive($content.find('.risk:first-of-type'));
