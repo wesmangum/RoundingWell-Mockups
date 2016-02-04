@@ -12,3 +12,8 @@ $('.menu-toggle').on('click', function() {
 
     $panel.toggleClass('open');
 });
+
+$(window).on('resize', function() {
+    var width = $panel.outerWidth();
+    $superSidebar.css('width', width / 2);
+});

@@ -1,15 +1,15 @@
-var filterToggle = $('.filter-toggle');
-var filterRegion = $('.filter-region');
-var optionToggle = $('.option-toggle');
-var optionRegion = $('.option-region');
+var $filterToggle = $('.filter-toggle');
+var $filterRegion = $('.filter-region');
+var $optionToggle = $('.option-toggle');
+var $optionRegion = $('.option-region');
 
-filterToggle.on('click', function() {
-    filterRegion.toggleClass('show');
+$filterToggle.on('click', function() {
+    $filterRegion.toggleClass('show');
     $('.numbers').toggleClass('show');
 });
 
-optionToggle.on('click', function() {
-    optionRegion.toggleClass('show');
+$optionToggle.on('click', function() {
+    $optionRegion.toggleClass('show');
 });
 
 var $panel = $('.panel');
@@ -27,10 +27,15 @@ $('.menu-toggle').on('click', function() {
     $panel.toggleClass('open');
 });
 
+$(window).on('resize', function() {
+    var width = $panel.outerWidth();
+    $superSidebar.css('width', width / 2);
+});
+
 var $superSidebar = $('.super-sidebar');
 var $content = $('.content');
 
-$('.content tbody tr').on('click', function() {
+$content.find('tr').on('click', function() {
     toggleSuperSidebar(this);
 });
 
@@ -39,16 +44,16 @@ $(document).on('click', '.content .risk', function() {
     toggleHalfView();
 });
 
-$('.super-sidebar .close').on('click', function() {
+$superSidebar.find('.close').on('click', function() {
     toggleSuperSidebar();
     $content.velocity({ width: '100%' }).removeClass('half');
 });
 
-$('.super-sidebar .expand').on('click', function() {
+$superSidebar.find('.expand').on('click', function() {
     var html = $('section.profile').html();
     $content.css({ width: '50%' }).addClass('patient-profile half').html(html);
-    $('.super-sidebar .heading').velocity({ height: 0 });
-    $('.super-sidebar .risk-status').css('border-top', 'none');
+    $superSidebar.find('.heading').velocity({ height: 0 });
+    $superSidebar.find('.risk-status').css('border-top', 'none');
     toggleActive($content.find('.risk:first-of-type'));
 });
 
