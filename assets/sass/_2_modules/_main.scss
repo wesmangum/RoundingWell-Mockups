@@ -76,9 +76,20 @@ body {
 
         td {
             color: $black-60;
-            overflow: hidden;
-            text-overflow: ellipsis;
             white-space: nowrap;
+
+            div {
+                display: inline-block;
+                max-width: calc(100% - 20px);
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            &.document:after {
+                content: '\e61a';
+                font-family: 'roundingwell';
+                margin-left: 5px;
+            }
         }
 
         tbody tr:hover {

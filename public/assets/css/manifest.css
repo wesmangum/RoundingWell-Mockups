@@ -974,9 +974,20 @@ body {
 
 .content table td {
   color: #999;
+  white-space: nowrap;
+}
+
+.content table td div {
+  display: inline-block;
+  max-width: calc(100% - 20px);
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;
+}
+
+.content table td.document:after {
+  content: '\e61a';
+  font-family: 'roundingwell';
+  margin-left: 5px;
 }
 
 .content table tbody tr:hover {
