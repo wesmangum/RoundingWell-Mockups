@@ -3,6 +3,7 @@ var $content = $('.content');
 
 $content.find('tr').on('click', function() {
     toggleSuperSidebar(this);
+    toggleProfileOverview();
 });
 
 $(document).on('click', '.content .risk', function() {
@@ -13,15 +14,6 @@ $(document).on('click', '.content .risk', function() {
 $superSidebar.find('.close').on('click', function() {
     toggleSuperSidebar();
     $content.velocity({ width: '100%' }).removeClass('half');
-});
-
-$superSidebar.find('.expand').on('click', function() {
-    var html = $('section.profile').html();
-    $content.css({ width: '50%' }).addClass('patient-profile half').html(html);
-    window.scrollTo(0, 0);
-    $superSidebar.find('.heading').velocity({ height: 0 });
-    $superSidebar.find('.risk-status').css('border-top', 'none');
-    toggleActive($content.find('.risk:first-of-type'));
 });
 
 function toggleSuperSidebar(ele) {
@@ -38,7 +30,7 @@ function toggleSuperSidebar(ele) {
 }
 
 function toggleActive(ele) {
-    var $active = $('.active');
+    var $active = $('tr.active');
     if ($active) {
         $active.removeClass('active');
     }
@@ -51,4 +43,37 @@ function toggleHalfView() {
     var width = $content.hasClass('half') ? '100%' : '50%';
     $content.velocity({ width: width });
     $content.toggleClass('half');
+}
+
+function toggleProfileOverview() {
+    // Set scroll back to top
+    window.scrollTo(0, 0);
+
+    // Set default style variables
+    var contentWidth = '50%';
+    var headingHeight = '0';
+    var borderTop = 'none';
+
+    // Alter style variables if closing superSidebar
+    if ($content.hasClass('patient-profile half')) {
+        contentWidth = '100%';
+        headingHeight = '100%';
+        borderTop = '2px solid red';
+    }
+
+    // Swap html between sections
+    var newHtml = $('section.store').html();
+    var oldHtml = $content.html();
+    $content.velocity({ width: contentWidth }).html(newHtml);
+    $('section.store').html(oldHtml);
+
+    // Make changes to SuperSidebar profile
+    $superSidebar.find('.heading').velocity({ height: headingHeight });
+    $superSidebar.find('.risk-status').css('border-top', borderTop);
+
+    // Set active Risk when overview is present
+    toggleActive($content.find('.risk:first-of-type'));
+
+    // Finally, toggle classes for next function call
+    $content.toggleClass('patient-profile half');
 }
