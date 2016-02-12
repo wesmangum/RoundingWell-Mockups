@@ -1,0 +1,227 @@
+.edit-list__item,
+.edit-list__item--display {
+    border-top: 1px solid $black-90;
+    color: #333;
+    display: block;
+    text-decoration: none;
+
+    &:last-child {
+        border-bottom: 1px solid $black-90;
+    }
+}
+
+// FIXME: this is temporary until the Add Task button is refactored
+// on Risk Page Task Manager. Eventually they should all be like this
+.edit-list--alt {
+    .edit-list__item:last-child,
+    .edit-list__item.edit-list__item--inline-editor:last-child {
+        border-bottom: 0;
+    }
+
+    .edit-list__item.edit-list__item--inline-editor {
+        .border {
+            border-bottom: 1px solid #C2E1F6;
+        }
+    }
+}
+
+.edit-list__item {
+    .edit-list__item__assigned-user {
+        color: $black-60;
+    }
+
+    .edit-list__item__assigned-user--pending-removal,
+    .edit-list__item__assigned-role {
+        color: color(red);
+    }
+
+    &:hover {
+        background-color: #F2F9FD;
+        border-color: #C2E1F6;
+        color: $black;
+
+        + .edit-list__item {
+            border-top-color: #C2E1F6;
+        }
+
+        .edit-list__item__edit-icon {
+            -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=100)';
+            opacity: 1;
+
+            &.is-disabled {
+                color: $black-90;
+            }
+        }
+
+        .edit-list__item__task,
+        .edit-list__item__duration,
+        .edit-list__item__due-date,
+        .edit-list__item__assigned-role,
+        .edit-list__item__assigned-user,
+        .edit-list__item__assigned-user--pending-removal, {
+            color: color(blue, light);
+        }
+    }
+}
+
+// Wraps everything inside li.edit-list__item
+.edit-list__item__block {
+    @include clearfix();
+
+    position: relative;
+}
+
+// Wraps all task name and assignee name
+.edit-list__item__content { overflow: hidden; }
+
+.edit-list__item__note-icon {
+    color: $black-80;
+    left: 2px;
+    position: relative;
+    top: 3px;
+
+    &:hover {
+        color: $black !important;
+        cursor: pointer;
+    }
+}
+
+.edit-list__item__task-name { margin-right: 5px; }
+
+.edit-list__item__assignee {
+    @include proxima-nova($black-60, 12px);
+
+    white-space: nowrap;
+}
+
+.edit-list__item__duration {
+    @include proxima-nova($black-60, 12px);
+
+    &--not-set {
+        color: color(red);
+    }
+}
+
+.edit-list__item__due-date {
+    @include proxima-nova($black-60, 12px);
+
+    float: right;
+    margin-left: 10px;
+    margin-top: 1px;
+
+    &.is-overdue {
+        color: $error-color;
+    }
+}
+
+// icon-border or direct message
+.edit-list__item__type-icon {
+    float: left;
+    margin-right: 10px;
+    position: relative;
+    z-index: 1;
+
+    &.font-icon-direct-message {
+        color: $black-40;
+    }
+}
+
+.edit-list__item__edit-icon {
+    -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=0)';
+    color: color(blue);
+    cursor: pointer;
+    font-size: 16px;
+    opacity: 0;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+.edit-list__item__label,
+.edit-list__item__display {
+    display: inline-block;
+    vertical-align: top;
+
+    &.alert-text--red {
+        margin-bottom: 0;
+        // make it play nicer with iPhone
+        @include mq(320px, max, width) {
+            display: block;
+        }
+    }
+}
+
+.edit-list__item__label {
+    color: color(blue);
+    font-weight: $bold-font-weight;
+    width: 210px;
+
+    &:after {
+        content: '\2026';
+        margin-left: 5px;
+    }
+
+    &.complete {
+        color: $black;
+
+        // make it play nicer with iPhone
+        @include mq(320px, max, width) {
+            display: block;
+        }
+
+        &:after {
+            content: '';
+        }
+    }
+}
+
+// FIXME: this should using a heading in the markup but there are global styles
+// messin with stuff
+.edit-list__item__heading {
+    display: block;
+    float: left;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    margin-right: 20px;
+}
+
+.edit-list__item__message {
+    margin-bottom: 20px;
+    overflow: hidden;
+
+    .alert-text--red {
+        margin-bottom: 0;
+    }
+}
+
+.edit-list__item__label--disabled {
+    background-color: $white;
+    color: $black-80;
+    font-weight: $bold-font-weight;
+    padding: 10px;
+
+    &:after {
+        content: '\2026';
+        margin-left: 5px;
+    }
+
+    + .hr {
+        display: block !important;
+        margin-right: $pad-med;
+    }
+}
+
+.edit-list__item__optional,
+.edit-list__item__locked {
+    color: $black-80;
+    display: inline-block;
+    float: right;
+}
+
+.edit-list__tip {
+    color: $black-80;
+    position: absolute;
+    right: 35px;
+    top: 9px;
+}

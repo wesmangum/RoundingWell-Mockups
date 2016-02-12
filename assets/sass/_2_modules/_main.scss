@@ -17,7 +17,8 @@ body {
 
 .main {
     background: $white;
-    padding: 150px 20px 0;
+    min-height: 100vh;
+    padding: 150px 20px;
 }
 
 .content {
@@ -77,6 +78,11 @@ body {
         td {
             color: $black-60;
             white-space: nowrap;
+
+            &:not(:first-of-type) {
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
 
             div {
                 display: inline-block;

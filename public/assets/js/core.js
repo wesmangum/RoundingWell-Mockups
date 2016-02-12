@@ -40,6 +40,11 @@ $content.find('tr').on('click', function() {
     toggleProfileOverview();
 });
 
+$(document).on('click', '.content.profile tr', function() {
+    toggleSuperSidebar(this);
+    toggleHalfView();
+});
+
 $(document).on('click', '.content .risk', function() {
     toggleSuperSidebar(this);
     toggleHalfView();
@@ -64,7 +69,7 @@ function toggleSuperSidebar(ele) {
 }
 
 function toggleActive(ele) {
-    var $active = $('tr.active');
+    var $active = $('.active');
     if ($active) {
         $active.removeClass('active');
     }
@@ -89,17 +94,15 @@ function toggleProfileOverview() {
     var borderTop = 'none';
 
     // Alter style variables if closing superSidebar
-    if ($content.hasClass('patient-profile half')) {
+    if ($content.hasClass('profile half')) {
         contentWidth = '100%';
         headingHeight = '100%';
         borderTop = '2px solid red';
     }
 
     // Swap html between sections
-    var newHtml = $('section.store').html();
-    var oldHtml = $content.html();
+    var newHtml = $('section.store .header-tab').html() + $('section.store .risks').html();
     $content.velocity({ width: contentWidth }).html(newHtml);
-    $('section.store').html(oldHtml);
 
     // Make changes to SuperSidebar profile
     $superSidebar.find('.heading').velocity({ height: headingHeight });
@@ -109,7 +112,25 @@ function toggleProfileOverview() {
     toggleActive($content.find('.risk:first-of-type'));
 
     // Finally, toggle classes for next function call
-    $content.toggleClass('patient-profile half');
+    $content.toggleClass('profile half');
+}
+
+var $content = $('.content');
+var $store = $('section.store');
+
+$(document).on('click', '.content .dashboard span', function() {
+    switchTab(this);
+});
+
+function switchTab(ele) {
+    var switchTo = $(ele).data('section');
+    var newHtml = $store.find('.' + switchTo)[0].outerHTML;
+    newHtml = $store.find('.header-tab').html() + newHtml;
+
+    $content.html(newHtml);
+
+    $('.dashboard span').removeClass('current');
+    $('.dashboard span[data-section="' + switchTo + '"]').addClass('current');
 }
 
 $.Velocity.defaults.easing = 'easeInOut';

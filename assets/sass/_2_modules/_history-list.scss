@@ -1,0 +1,25 @@
+.history-list__block {
+    padding: 10px 12px;
+
+    &.is-status {
+        padding-left: 30px;
+    }
+
+    &.prev {
+        border-color: color(light_blue, light_border);
+    }
+}
+
+.history-list__icon {
+    left: 10px;
+}
+
+.history-list__link:hover {
+    background-color: color(light_blue);
+    border-color: color(light_blue, light_border);
+    color: $black;
+
+    .history-list__meta {
+        color: $black;
+    }
+}

@@ -1,0 +1,70 @@
+.my-tasks.list {
+    .item-name {
+        line-height: 16px;
+        overflow: hidden;
+    }
+
+    .item-due-date {
+        float: right;
+        font-size: 12px;
+        line-height: 17px;
+        margin-left: 15px;
+        margin-top: 3px;
+
+        &.past-due {
+            color: $error-color;
+        }
+    }
+
+    .font-icon-open-arrow-right {
+        position: relative;
+        top: 3px;
+    }
+
+    .task-list-name {
+        padding-left: 25px;
+        position: relative;
+    }
+
+    .checkbox {
+        background-color: $black-90;
+        border: 2px solid $black-80;
+        height: 14px;
+        left: 0;
+        position: absolute;
+        top: 1px;
+        width: 14px;
+    }
+}
+
+.tasks-heading {
+    background-color: $black-95;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 3px 10px;
+    text-transform: uppercase;
+
+    span {
+        font-weight: 400;
+    }
+}
+
+.tasks-heading.overdue {
+    background-color: transparent;
+    border-color: $error-color;
+    color: $error-color;
+
+    span {
+        color: $error-color;
+    }
+}
+
+
+.my-tasks .list-body .list-row:first-child {
+    border-top: 1px solid $white;
+
+    &:hover {
+        border-color: color(light_blue, light_border);
+    }
+}

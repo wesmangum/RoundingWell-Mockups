@@ -1,0 +1,57 @@
+// *************************************
+//
+//   Main Focus Area
+//   -> Y'know, the rounded part
+//      with the shadow
+//
+// *************************************
+.main,
+%main {
+    background-color: $white;
+    border: 1px solid $black-80;
+    border-bottom: 0;
+    border-radius: 4px 4px 0 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+    height: 100%;
+    position: relative;
+    z-index: 5;
+}
+
+.main--alt {
+    @extend %main;
+
+    border-radius: 4px 0 0;
+}
+
+// ----- Round first elements in main focus area ----- //
+.rnd {
+    border-radius: 4px 4px 0 0;
+
+    &--alt {
+        border-radius: 4px 0 0;
+    }
+}
+
+
+// ----- Flexible on the left, fixed on the right ----- //
+.flex-fixed {
+    padding-right: 250px;
+    width: 100%;
+
+    .flex {
+        @extend %grid-cell;
+        width: 100%;
+    }
+
+    .fixed {
+        @extend %grid-cell;
+        margin-right: -100%;
+        width: 250px;
+    }
+}
+
+
+// ----- Flexible region default height ----- //
+.flex-region {
+    height: 100%;
+}

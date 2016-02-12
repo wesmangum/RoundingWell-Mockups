@@ -1,0 +1,186 @@
+@mixin list-row($class) {
+    @include clearfix();
+
+    border-top: 1px solid $black-90;
+    color: $black-20;
+    cursor: pointer;
+    display: block;
+    position: relative;
+    width: 100%;
+
+    &:first-child {
+        border: 0;
+    }
+
+    &:last-child {
+        border-bottom: 1px solid $black-90;
+    }
+
+    &.is-highlighted {
+        background-color: $highlighted;
+    }
+
+    &:hover {
+        background-color: color(light_blue);
+        border-color: color(light_blue, light_border);
+        color: $black;
+
+        .list-meta {
+            color: $black;
+        }
+
+        & + #{$class} {
+            border-top-color: color(light_blue, light_border);
+        }
+    }
+}
+
+.list__row {
+    @include list-row('.list__row');
+}
+
+.list__cell {
+    @include clearfix();
+
+    padding: 10px 12px;
+}
+
+.single-row-list {
+    @include user-select(none);
+
+    list-style: none;
+    position: relative;
+    width: 100%;
+}
+
+.single-row-list__link:hover {
+    color: color(blue);
+}
+
+.single-row-list__cell {
+    display: inline-block;
+    height: inherit;
+    overflow: hidden;
+    padding: 11px 12px;
+    text-overflow: ellipsis;
+    vertical-align: top;
+    white-space: nowrap;
+
+    // accounts for lining up with heading to have a hanging sort arrow icon
+    &.sortable {
+        padding-right: 32px;
+    }
+
+    &.not-specified { color: $black-80; }
+
+    &.u-text-all-caps {
+        font-size: 12px;
+        padding-top: 12px;
+    }
+
+    .not-specified { color: $black-80; }
+    .has-error { color: $error-color; }
+}
+
+.single-row-list__row {
+    @include list-row('.single-row-list__row');
+    height: 40px;
+}
+
+.single-row-list__heading {
+    @include user-select(none);
+
+    color: $black-20;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    height: 40px;
+    padding: 13px 12px 11px;
+    text-transform: uppercase;
+    vertical-align: top;
+
+    &.sortable {
+        padding-right: 32px;
+        position: relative;
+        vertical-align: middle;
+
+        &:after {
+            color: $black-80;
+            // font-icon-sort
+            content: '\e00e';
+            font-family: $icon-font;
+            font-size: 16px;
+            margin-left: 5px;
+            position: absolute;
+            top: 12px;
+        }
+
+        &.narrow:after {
+            right: 10px;
+        }
+
+        &:hover {
+            color: $black;
+            cursor: pointer;
+        }
+
+        // down arrow icon
+        // .font-icon-arrow-up
+        &.sorted-desc:after {
+            content: '\e032';
+        }
+
+
+        // up arrow icon
+        // .font-icon-arrow-up
+        &.sorted-asc:after {
+            content: '\e030';
+        }
+
+        &:hover:after,
+        &.sorted-desc:after,
+        &.sorted-asc:after {
+            color: color(blue);
+        }
+
+    }
+
+    [class^= 'font-icon-'],
+    [class*= ' font-icon-'] {
+        line-height: 1;
+        margin: 0;
+    }
+
+    .font-icon-status {
+        margin-right: -3px;
+    }
+}
+
+// Special cases for Patient Management Lists
+// -----------------------------------------------------------------------------
+// hide days ago at smaller widths for all patients list
+// ex: Sep 25, 2014 - 2 days ago
+.patient-list-date .days-from-now {
+    @include mq((1010/16 * 1em), max, width) {
+        display: none;
+    }
+}
+
+// make sure certain narrow cols stay narrow
+.single-row-list__heading,
+.single-row-list__cell {
+    &.engagement-col,
+    &.signed-up-col,
+    &.status-col {
+        padding-right: 12px;
+    }
+
+    &.engagement-col {
+        max-width: 75px;
+    }
+
+    &.signed-up-col,
+    &.status-col {
+        max-width: 55px;
+    }
+}

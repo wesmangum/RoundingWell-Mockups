@@ -1,0 +1,68 @@
+%meta {
+    color: $black-60;
+    display: block;
+    font-size: 12px;
+}
+
+// -------------------------------------
+//   Recent History
+// -------------------------------------
+.recent-history {
+    margin: 0 25px 40px;
+
+    @include mq($bp-small, max, width) {
+        margin-left: 15px;
+    }
+}
+
+.recent-history-list {
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+.recent-history__meta {
+    @extend %meta;
+}
+
+.recent-history__item {
+    margin-bottom: 10px;
+}
+
+.recent-history__block.is-status {
+    padding-left: 20px;
+    position: relative;
+}
+
+.recent-history__link:hover {
+    color: color(blue);
+
+    .recent-history__meta {
+        color: $black-20;
+    }
+}
+
+// given higher specificity to override .paused status
+.recent-history__icon.font-icon-status,
+.recent-history__icon.font-icon-status.paused {
+    left: -2px;
+    position: absolute;
+}
+
+// -------------------------------------
+//   History
+// -------------------------------------
+
+.history-list__meta {
+    @extend %meta;
+}
+
+.history-list__block {
+    border-bottom: 1px solid $black-90;
+    display: block;
+}
+
+// given higher specificity to override .paused status
+.history-list__icon.font-icon-status,
+.history-list__icon.font-icon-status.paused {
+    position: absolute;
+}

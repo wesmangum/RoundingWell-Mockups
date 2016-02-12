@@ -1,0 +1,47 @@
+// -------------------------------------
+//   Bottom 'fixed' bar
+// -------------------------------------
+.page-actions-wrap {
+    bottom: 0;
+    left: 0;
+    margin-bottom: 50px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: margin-bottom 0.3s linear;
+
+    &.actions-inactive {
+        margin: 0;
+    }
+}
+
+#page-actions-region {
+    bottom: 0;
+    padding: 9px 25px;
+    position: absolute;
+    transition: bottom 0.3s linear;
+    width: 100%;
+
+
+    &.actions-inactive {
+        bottom: -50px;
+    }
+}
+
+.page-actions {
+    background-color: $black-95;
+    border-top: 1px solid $black-80;
+
+    .form-control-cancel {
+        color: $black-40;
+        font-weight: $bold-font-weight;
+        // line up text with small button
+        margin: 9px 0 0;
+        text-decoration: none;
+
+        &:hover,
+        &:focus {
+            color: $black;
+        }
+    }
+}

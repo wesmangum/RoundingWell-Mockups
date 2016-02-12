@@ -1,0 +1,88 @@
+.activity-list {
+    .is-highlighted {
+        background-color: $highlighted;
+    }
+
+    &__item {
+        list-style: none;
+        margin: 0 20px 20px 35px;
+        max-width: 570px;
+        padding-left: 26px;
+        position: relative;
+
+        + .activity-list__item.activity-list__item--system {
+            margin-top: -5px;
+        }
+
+        + .activity-list__item {
+            margin-top: 0;
+        }
+    }
+
+    &__small {
+        @include proxima-nova($black-60, 12px);
+    }
+
+    &__dm {
+        margin-bottom: 2px;
+    }
+
+    &__icon--dm { @include proxima-nova($black-60); }
+
+    &__item--system {
+        margin-bottom: 7px;
+
+        &:last-child {
+            margin-bottom: 20px;
+        }
+
+        + .activity-list__item {
+            padding-top: 8px;
+        }
+
+        + .activity-list__item .activity-list__icon {
+            top: 9px;
+        }
+
+        + .activity-list__item.activity-list__item--system {
+            margin-top: 0;
+            padding-top: 0;
+        }
+    }
+
+    &__icon {
+        font-size: 16px;
+        left: 0;
+        position: absolute;
+    }
+
+    // -------------------------------------
+    //   Task Completed List
+    // -------------------------------------
+    .icon-border {
+        &:hover {
+            background: $white;
+            border-color: $black;
+            cursor: pointer;
+        }
+
+        &.checkmark-icon:before {
+            color: color(green);
+            //.font-icon-checkmark
+            content: '\e00b';
+        }
+
+        &.not-applicable-icon:before {
+            color: color(red);
+            //.font-icon-na
+            content: '\e900';
+        }
+    }
+
+    // Clinician name in a comment
+    .mention {
+        color: color(blue);
+        cursor: pointer;
+        font-weight: $bold-font-weight;
+    }
+}

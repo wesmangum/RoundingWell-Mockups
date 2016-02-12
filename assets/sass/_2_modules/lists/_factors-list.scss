@@ -1,0 +1,24 @@
+// Pre existing factors list
+.factors-list {
+    list-style: none;
+
+    &.is-disabled {
+        color: $black-80;
+
+        .factors-list__icon {
+            color: $black-80;
+        }
+    }
+}
+
+.factors-list__item {
+    margin-bottom: 5px;
+    padding-left: 15px;
+    position: relative;
+}
+
+.factors-list__icon {
+    color: color(blue);
+    left: -4px;
+    position: absolute;
+}

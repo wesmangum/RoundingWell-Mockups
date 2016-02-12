@@ -1,0 +1,106 @@
+// *************************************
+//
+//   Main App Layout
+//   -> Everything related to the main layout of the site.
+//      What a helpful description
+//
+// *************************************
+
+// -------------------------------------------------------
+//   Pop regions - Regions that sit on top of everything
+// -------------------------------------------------------
+#alert-region { z-index: 7; }
+#modal-region { z-index: 8; }
+#pop-region { z-index: 9; }
+#tooltip-region { z-index: 10; }
+#app-error-region {  z-index: 999; }
+
+
+// -------------------------------------
+//   Body
+// -------------------------------------
+body {
+    background-color: #FAFBFD;
+    height: 100%;
+}
+
+html { height: 100%; }
+
+
+// -------------------------------------
+//   Main Regions
+// -------------------------------------
+
+// Normally we wouldn't style an id, but we make an exception here so desktop
+// and mobile can have the same base markup
+#app-frame-region {
+    height: 100%;
+    width: 100%;
+}
+
+.app-frame {
+    height: 100%;
+    padding: 40px 10px 0 200px;
+    position: relative;
+    width: 100%;
+}
+
+.app-header {
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.app-nav {
+    height: 100%;
+    left: 0;
+    // prevent logo overlap in sidebar
+    min-height: 580px;
+    position: absolute;
+    top: 40px;
+    width: 200px;
+    z-index: 0;
+}
+
+.app-main {
+    height: 100%;
+    position: relative;
+}
+
+.app-header,
+.app-main {
+    min-width: 784px;
+
+    @include mq(320px, max, width) {
+        min-width: 500px !important;
+    }
+
+    @include mq(768px, max, width) {
+        min-width: 748px;
+    }
+}
+
+
+#parent-region {
+    height: 100%;
+    position: relative;
+    width: 100%;
+}
+
+.parent-inactive {
+    display: none;
+}
+
+#child-region {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 4;
+}
+
+
+.main {
+    background-color: $white;
+}

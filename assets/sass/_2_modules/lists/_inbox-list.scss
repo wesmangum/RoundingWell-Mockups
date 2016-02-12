@@ -1,0 +1,143 @@
+// div class list
+// ul class list-body
+.list--inbox {
+    &__mod-date {
+        color: $black-40;
+        font-size: 12px;
+        margin-top: 4px;
+    }
+
+
+    .list-meta {
+        color: color(navy);
+        margin-bottom: 10px;
+    }
+
+    .font-icon-open-arrow-right {
+        position: relative;
+        top: 3px;
+    }
+
+    &__block {
+        &.is-read {
+            -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=50)';
+            opacity: 0.5;
+        }
+    }
+}
+
+.notification-list {
+    margin-bottom: 5px;
+
+    > li {
+        list-style: none;
+        margin-bottom: 7px;
+    }
+
+    // ----- Tasks ----- //
+    &__overdue-task,
+    &__completed-task,
+    &__assigned-task {
+        padding-left: 22px;
+        position: relative;
+
+        &:before {
+            background-color: $black-90;
+            border: 2px solid $black-80;
+            border-radius: 2px;
+            content: '';
+            display: block;
+            height: 14px;
+            left: 0;
+            position: absolute;
+            top: 1px;
+            width: 14px;
+        }
+    }
+
+    &__overdue-task strong,
+    &__manage-group--pending-removal {
+        color: color(red);
+    }
+
+    &__completed-task strong {
+        color: color(green);
+    }
+
+    &__assigned-task strong {
+        color: color(blue);
+    }
+
+    // ----- Direct Messages ----- //
+    // ----- Comments ----- //
+    &__comment,
+    &__directmessage_read,
+    &__manage-group {
+        padding-left: 22px;
+        position: relative;
+
+        strong {
+            color: $black-20;
+        }
+
+        &__icon {
+            left: 0;
+            position: absolute;
+            top: 1px;
+        }
+
+        .icon--pending-removal {
+            color: color(red);
+        }
+
+        .icon--removed {
+            color: $black-80;
+        }
+    }
+
+    // ----- Follower Add/Remove ----- //
+    &__followers,
+    &__risk-closed {
+        color: $black-40;
+        font-size: 12px;
+    }
+
+    // ----- Mark as Read/Unfollow Risk ----- //
+    &__actions-wrap,
+    &__actions,
+    &__actions-heading {
+        color: #7C9FB3;
+        font-size: 12px;
+        font-weight: $bold-font-weight;
+    }
+
+    &__actions,
+    &__actions-heading {
+        &:hover {
+            color: color(blue, light);
+        }
+
+        &[disabled] {
+            color: $black-80;
+            cursor: not-allowed;
+        }
+    }
+
+    &__actions {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    &__actions-heading {
+        float: right;
+        padding: 13px 15px;
+    }
+
+    &__date {
+        color: $black-60;
+    }
+}
+
+.details-text {
+    margin-bottom: 13px;
+}

@@ -1,0 +1,253 @@
+.list {
+    @include user-select(none);
+    position: relative;
+
+    &.with-icon {
+        i {
+            font-size: 16px;
+            left: 11px;
+            position: absolute;
+            top: 14px;
+        }
+
+        .list-cell {
+            padding-left: 40px;
+            position: relative;
+        }
+    }
+}
+
+.list-cell {
+    display: inline-block;
+    padding: 10px 12px;
+    vertical-align: top;
+
+    &.not-specified { color: $black-80; }
+
+    &.u-text-all-caps {
+        font-size: 12px;
+        padding-top: 12px;
+    }
+}
+
+.list-meta {
+    @include proxima-nova($black-60, 12px);
+
+    font-weight: 600;
+
+    span {
+        display: inline-block;
+
+        + span:before {
+            // bullet
+            content: '\2022';
+            margin: 0 4px;
+        }
+    }
+}
+
+%list-headings {
+    background-color: $black-95;
+    border-bottom: 1px solid $black-80;
+    min-height: 40px;
+    width: 100%;
+}
+
+.list-headings {
+    @extend %list-headings;
+}
+
+.list-headings--alt {
+    @extend %list-headings;
+
+    background-color: $black-95;
+    background-image: linear-gradient($white, $black-95);
+}
+
+.list-body {
+    list-style: none;
+    width: 100%;
+
+    .list-link {
+        border-bottom: 1px solid $black-90;
+        color: $black-20;
+        display: block;
+        height: inherit;
+        position: relative;
+
+        &:hover {
+            background-color: color(light_blue);
+            border-color: color(light_blue, light_border);
+            color: $black;
+
+            .list-meta {
+                color: $black;
+            }
+        }
+
+        &.prev {
+            border-bottom-color: color(light_blue, light_border);
+        }
+    }
+}
+
+
+
+// Patient name with a '>' next to it
+.list-patient-name {
+    font-weight: $semibold-font-weight;
+    margin-bottom: 5px;
+}
+
+.list-risk-name {
+    @include proxima-nova(color(blue), false, $bold-font-weight);
+}
+
+
+
+// FIXME: this is mostly legacy. When we redo the Manage Patients lists, this needs love
+.list-filters {
+    background-color: $black-95;
+    background-image: linear-gradient($white, $black-95);
+    border-bottom: 1px solid $black-80;
+    border-radius: 4px 4px 0 0;
+    height: 44px;
+    padding: 7px 12px;
+    position: relative;
+
+    .filter {
+        background-color: $white;
+        background-image: linear-gradient($white, $black-95);
+        border: 1px solid #D4D4D4;
+        border-radius: 2px;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        color: $black-20;
+        cursor: pointer;
+        display: inline-block;
+        font-weight: $bold-font-weight;
+        padding: 5px 30px 5px 10px;
+        position: relative;
+        white-space: nowrap;
+
+        &:hover { background: $white; }
+        &.selected { box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1); }
+
+        &.disabled {
+            background-color: $black-95;
+            background-image: linear-gradient($white, $black-95);
+            box-shadow: none;
+            color: $black-40;
+            cursor: not-allowed;
+            padding-right: 10px;
+
+            .font-icon-arrow-down { display: none; }
+        }
+
+        &.left-icon { padding-left: 30px; }
+
+
+        // FIXME: the i here is unnecessary, should just be the attribute selector
+        // This makes the asset merger play nice
+        i[class^= 'font-icon-'],
+        i[class*= ' font-icon-'] {
+            font-size: 16px;
+            position: absolute;
+            top: 5px;
+        }
+
+        .font-icon-group,
+        .font-icon-status,
+        .font-icon-issue { left: 10px; }
+        .font-icon-status { line-height: 1; }
+        .font-icon-arrow-down { right: 10px; }
+    }
+}
+
+
+//
+// Pill style filters
+//
+.filter-pill {
+    list-style: none;
+    // needed for vertical centering
+    margin-top: 1px;
+
+    > li {
+        display: inline-block;
+        margin-right: 5px;
+
+        &.filter-pill__heading {
+            @include proxima-nova($black-40, 12px, $semibold-font-weight, uppercase);
+
+            margin-right: 10px;
+        }
+    }
+
+    button {
+        border-radius: 13px;
+        cursor: pointer;
+        display: block;
+        font-weight: $bold-font-weight;
+        padding: 5px 15px;
+
+        &:hover { box-shadow: 0 0 0 1px $black-60; }
+
+        &.selected {
+            background-color: $black-20;
+            color: $white;
+        }
+
+        &.selected:hover { box-shadow: none; }
+
+        .no-boxshadow &:hover { color: color(blue); }
+        .no-boxshadow &.selected:hover { color: $white; }
+    }
+}
+
+
+
+//
+// List head meta: display relevant info at the top of the list
+//
+.list-head-meta {
+    color: $black-40;
+    font-size: 12px;
+    margin-right: 12px;
+
+    span + span:before {
+        content: '\2022';
+        margin: 0 5px;
+    }
+}
+
+.list-count {
+    margin-top: 7px;
+}
+
+.list-count-btn {
+    margin-right: 12px;
+}
+
+
+//
+// Good ol' <ol> and <ul>
+//
+.list-horizontal {
+    li {
+        display: inline;
+        margin-left: $pad-small;
+    }
+}
+
+.list-vertical {
+    li {
+        margin-left: 16px;
+    }
+
+    &.med-text {
+        li {
+            line-height: 1.2;
+            margin-bottom: $pad-smaller;
+        }
+    }
+}

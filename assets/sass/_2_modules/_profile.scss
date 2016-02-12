@@ -1,4 +1,4 @@
-.patient-profile {
+.profile {
     padding: 25px 25px 0;
     width: 100%;
 
@@ -107,12 +107,9 @@
     }
 
     .task-management,
-    .current-list {
+    .risk-list {
+        list-style-type: none;
         margin-bottom: 40px;
-
-        ul {
-            list-style-type: none;
-        }
 
         li {
             border-top: 1px solid $black-80;
@@ -154,7 +151,7 @@
         }
     }
 
-    .current-list {
+    .risk-list {
         li {
             padding: 15px 25px;
 
@@ -178,70 +175,6 @@
 
         .id {
             color: $black-60;
-        }
-    }
-
-    .history {
-        max-width: 500px;
-
-        ul {
-            list-style-type: none;
-        }
-
-        li,
-        .assignee,
-        .info {
-            color: $black-60;
-            font-size: 14px;
-        }
-
-        li {
-            margin: 5px 0;
-            padding-left: 25px;
-
-            i {
-                left: 25px;
-                position: absolute;
-            }
-        }
-
-        .complete {
-            color: $black;
-            font-size: 16px;
-            margin: 15px 0;
-        }
-
-        .mention {
-            color: color(blue, light);
-            display: inline;
-            font-weight: $bold-font-weight;
-        }
-
-        .info {
-            margin: 2px 0;
-        }
-
-        .font-icon-checkmark {
-            border: 1px solid $black-80;
-            border-radius: 2px;
-            color: color(green);
-        }
-
-        .add-comment {
-            display: block;
-            max-width: 400px;
-            text-align: left;
-            width: 100%;
-
-            i {
-                margin-right: 10px;
-            }
-        }
-
-        &.recent {
-            ul {
-                margin-bottom: 25px;
-            }
         }
     }
 }
